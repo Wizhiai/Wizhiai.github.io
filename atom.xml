@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wizhiai.github.io/"/>
-  <updated>2020-09-28T07:14:44.803Z</updated>
+  <updated>2020-09-28T08:25:20.793Z</updated>
   <id>https://wizhiai.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS 查看项目编译时间并优化编译速度</title>
+    <link href="https://wizhiai.github.io/2020/09/28/ios-cha-kan-xiang-mu-bian-yi-shi-jian-bing-you-hua-bian-yi-su-du/"/>
+    <id>https://wizhiai.github.io/2020/09/28/ios-cha-kan-xiang-mu-bian-yi-shi-jian-bing-you-hua-bian-yi-su-du/</id>
+    <published>2020-09-28T08:25:04.000Z</published>
+    <updated>2020-09-28T08:25:20.793Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;源代码和三方库引入很多的时候，我们会发现编译的速度很慢。在了解了XCode的编译过程后，我们可以从以下角度来优化编译速度：&lt;br&gt;A.查看编译时间方法：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-css&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Flutter的Json解析</title>
@@ -460,30 +483,6 @@ CABasicAnimation
 &lt;p&gt;class对象类对象类对象&lt;/p&gt;
 &lt;p&gt;meta-class对象元类对象元类对象&lt;/p&gt;
 &lt;h2 id=&quot;一-instance对象&quot;&gt;&lt;a href=&quot;#一-instance对象&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>wkwebview的坑：iOS10位分水岭，包括跨域和低版本不能再沙盒访问js，css等资源文件</title>
-    <link href="https://wizhiai.github.io/2020/09/28/wkwebview-de-keng-ios10-wei-fen-shui-ling-bao-gua-kua-yu-he-di-ban-ben-bu-neng-zai-sha-he-fang-wen-js-css-deng-zi-yuan-wen-jian/"/>
-    <id>https://wizhiai.github.io/2020/09/28/wkwebview-de-keng-ios10-wei-fen-shui-ling-bao-gua-kua-yu-he-di-ban-ben-bu-neng-zai-sha-he-fang-wen-js-css-deng-zi-yuan-wen-jian/</id>
-    <published>2020-09-28T05:48:10.000Z</published>
-    <updated>2020-09-28T05:48:24.553Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;1：iOS10以下版本，wkwebview不允许在沙盒里访问html里的css，js等外部资源文件，需要转移到tmp文件夹下访问；&lt;/p&gt;
-&lt;p&gt;复制到tmp文件夹下，然后从tmp文件夹下访问即可&lt;/p&gt;
-&lt;p&gt;-(NSString
         
       
     

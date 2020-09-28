@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>iOS 查看项目编译时间并优化编译速度</title>
+      <link href="/2020/09/28/ios-cha-kan-xiang-mu-bian-yi-shi-jian-bing-you-hua-bian-yi-su-du/"/>
+      <url>/2020/09/28/ios-cha-kan-xiang-mu-bian-yi-shi-jian-bing-you-hua-bian-yi-su-du/</url>
+      
+        <content type="html"><![CDATA[<p>源代码和三方库引入很多的时候，我们会发现编译的速度很慢。在了解了XCode的编译过程后，我们可以从以下角度来优化编译速度：<br>A.查看编译时间方法：</p><pre class="line-numbers language-css"><code class="language-css"><span class="token number">1.</span>关闭XCode<span class="token number">2.</span>终端输入指令：defaults write com<span class="token number">.</span>apple<span class="token number">.</span>dt<span class="token number">.</span>Xcode ShowBuildOperationDuration YES<span class="token number">3.</span>重启XCode打开项目，command+B运行，即可查看编译时间，如图所示：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><img src="https:////upload-images.jianshu.io/upload_images/6781590-94b6648e9acfc980.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/754" alt="img"></p><p>image.png</p><p>B.优化编译速度方法：<br>1.代码层面的优化</p><pre class="line-numbers language-objectivec"><code class="language-objectivec">forward declaration所谓forward declaration，就是<span class="token keyword">@class</span> CLASSNAME，而不是#import     CLASSNAME<span class="token punctuation">.</span>h。这样，编译器能大大提高#import的替换速度。对常用的工具类进行打包（Framework<span class="token operator">/</span><span class="token punctuation">.</span>a）打包成Framework或者静态库，这样编译的时候这部分代码就不需要重新编译了。常用头文件放到预编译文件里XCode的pch文件是预编译文件，这里的内容在执行XCode build之前就已经被预编译，并且引入到每一个<span class="token punctuation">.</span>m文件里了。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>2.编译器选项优化</p><pre class="line-numbers language-rust"><code class="language-rust">Debug模式下，不生成dsym文件，dysm文件里存储了调试信息，在Debug模式下，我们可以借助XCode和LLDB进行调试。所以，不需要生成额外的dsym文件来降低编译速度。Debug开启Build Active Architecture Only在XCode <span class="token punctuation">-></span> Build Settings <span class="token punctuation">-></span> Build Active Architecture Only 改为YES。这样做，可以只编译当前的版本，比如arm7<span class="token operator">/</span>arm64等等，记得只开启Debug模式。这个选项在高版本的XCode中自动开启了。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>3.编译器优化</p><pre class="line-numbers language-rust"><code class="language-rust">Debug模式下，关闭编译器优化<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https:////upload-images.jianshu.io/upload_images/6781590-e17bbdca624324ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200" alt="img"></p><p>image.png</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Flutter的Json解析</title>
       <link href="/2020/09/28/flutter-de-json-jie-xi/"/>
       <url>/2020/09/28/flutter-de-json-jie-xi/</url>
