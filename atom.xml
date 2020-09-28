@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LJ的博客</title>
+  
+  <subtitle>烂笔头</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://wizhiai.github.io/"/>
+  <updated>2020-09-28T06:02:25.757Z</updated>
+  <id>https://wizhiai.github.io/</id>
+  
+  <author>
+    <name>胡</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设置view随键盘升高，点击切换密码模式时，底部暴露出黑色背景</title>
+    <link href="https://wizhiai.github.io/2020/09/28/she-zhi-view-sui-jian-pan-sheng-gao-dian-ji-qie-huan-mi-ma-mo-shi-shi-di-bu-bao-lu-chu-hei-se-bei-jing/"/>
+    <id>https://wizhiai.github.io/2020/09/28/she-zhi-view-sui-jian-pan-sheng-gao-dian-ji-qie-huan-mi-ma-mo-shi-shi-di-bu-bao-lu-chu-hei-se-bei-jing/</id>
+    <published>2020-09-28T06:02:03.000Z</published>
+    <updated>2020-09-28T06:02:25.757Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这种一般设置下当前视图view的背景颜色为与当前颜色匹配即可。&lt;/p&gt;
+&lt;p&gt;比如，navagationcontroller下的一个controller的背景颜色为黑色，设置_navigationController.view.backgroundColor =
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>贝塞尔曲线圆环圆角</title>
+    <link href="https://wizhiai.github.io/2020/09/28/bei-sai-er-qu-xian-yuan-huan-yuan-jiao/"/>
+    <id>https://wizhiai.github.io/2020/09/28/bei-sai-er-qu-xian-yuan-huan-yuan-jiao/</id>
+    <published>2020-09-28T06:01:34.000Z</published>
+    <updated>2020-09-28T06:01:41.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;CAShaperLayer和UIBezierPath都已经设置为kCGLineJoinRound&lt;/p&gt;
+&lt;p&gt;圆环的填充要设置_mainLine.lineCap =
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mach port</title>
+    <link href="https://wizhiai.github.io/2020/09/28/mach-port/"/>
+    <id>https://wizhiai.github.io/2020/09/28/mach-port/</id>
+    <published>2020-09-28T06:00:44.000Z</published>
+    <updated>2020-09-28T06:00:55.108Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Runloop 保证不退出&lt;/p&gt;
+&lt;p&gt;mode&lt;/p&gt;
+&lt;p&gt;唤醒&lt;/p&gt;
+&lt;p&gt;mach——send_msg 唤醒mach——rcv——msg&lt;/p&gt;
+&lt;p&gt;Runloopgetmain&lt;/p&gt;
+&lt;p&gt;Sdtable
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>centos 更换mysql编码，以便支持emoji表情</title>
+    <link href="https://wizhiai.github.io/2020/09/28/centos-geng-huan-mysql-bian-ma-yi-bian-zhi-chi-emoji-biao-qing/"/>
+    <id>https://wizhiai.github.io/2020/09/28/centos-geng-huan-mysql-bian-ma-yi-bian-zhi-chi-emoji-biao-qing/</id>
+    <published>2020-09-28T06:00:11.000Z</published>
+    <updated>2020-09-28T06:00:25.459Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;更改 &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;, 添加如下内容:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;line-numbers language-csharp&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>刨根问底Objective－C Runtime（1）－ Self &amp; Super</title>
+    <link href="https://wizhiai.github.io/2020/09/28/bao-gen-wen-di-objective-c-runtime-1-self-super/"/>
+    <id>https://wizhiai.github.io/2020/09/28/bao-gen-wen-di-objective-c-runtime-1-self-super/</id>
+    <published>2020-09-28T05:59:33.000Z</published>
+    <updated>2020-09-28T05:59:54.248Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;转：&lt;a href=&quot;http://chun.tips/blog/2014/11/05/bao-gen-wen-di-objective[nil]c-runtime(1)[nil]-self-and-super/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>基于一段文本语句的自动生成生成选择题/填空题，用于巩固自己新学的知识进行自我测验‘ </title>
+    <link href="https://wizhiai.github.io/2020/09/28/ji-yu-yi-duan-wen-ben-yu-ju-de-zi-dong-sheng-cheng-sheng-cheng-xuan-ze-ti-tian-kong-ti-yong-yu-gong-gu-zi-ji-xin-xue-de-zhi-shi-jin-xing-zi-wo-ce-yan/"/>
+    <id>https://wizhiai.github.io/2020/09/28/ji-yu-yi-duan-wen-ben-yu-ju-de-zi-dong-sheng-cheng-sheng-cheng-xuan-ze-ti-tian-kong-ti-yong-yu-gong-gu-zi-ji-xin-xue-de-zhi-shi-jin-xing-zi-wo-ce-yan/</id>
+    <published>2020-09-28T05:58:05.000Z</published>
+    <updated>2020-09-28T05:59:18.699Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这个因为涉及到自己做的一个app的核心，具体实现不写公开博客了&lt;/p&gt;
+&lt;p&gt;参考：结巴分词&lt;a href=&quot;https://github.com/fxsjy/jieba&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>参考资料，文档</title>
+    <link href="https://wizhiai.github.io/2020/09/28/can-kao-zi-liao-wen-dang/"/>
+    <id>https://wizhiai.github.io/2020/09/28/can-kao-zi-liao-wen-dang/</id>
+    <published>2020-09-28T05:56:09.000Z</published>
+    <updated>2020-09-28T05:56:27.662Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;iOS-应用防-HTTPS-MiTM-基本方案&quot;&gt;&lt;a href=&quot;#iOS-应用防-HTTPS-MiTM-基本方案&quot; class=&quot;headerlink&quot; title=&quot;iOS 应用防 HTTPS MiTM 基本方案&quot;&gt;&lt;/a&gt;iOS 应用防 HTTPS
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SDWebImage分析</title>
+    <link href="https://wizhiai.github.io/2020/09/28/sdwebimage-fen-xi/"/>
+    <id>https://wizhiai.github.io/2020/09/28/sdwebimage-fen-xi/</id>
+    <published>2020-09-28T05:55:33.000Z</published>
+    <updated>2020-09-28T05:57:33.095Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;SDWebImage&quot;&gt;&lt;a href=&quot;#SDWebImage&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS 搭建Node环境下的推送服务器</title>
+    <link href="https://wizhiai.github.io/2020/09/28/ios-da-jian-node-huan-jing-xia-de-tui-song-fu-wu-qi/"/>
+    <id>https://wizhiai.github.io/2020/09/28/ios-da-jian-node-huan-jing-xia-de-tui-song-fu-wu-qi/</id>
+    <published>2020-09-28T05:54:45.000Z</published>
+    <updated>2020-09-28T05:55:04.773Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;先说注意点：&lt;/p&gt;
+&lt;p&gt;1：开发环境下要配置developer的.p12证书，生产环境的时候在换掉。&lt;/p&gt;
+&lt;p&gt;2：证书目录要用绝对的项目路径，建议使用__dirname;&lt;/p&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;`const&lt;/strong&gt;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS使用cocoapods 安装libwebp 0.6.0遇到Error installing libwebp</title>
+    <link href="https://wizhiai.github.io/2020/09/28/ios-shi-yong-cocoapods-an-zhuang-libwebp-0-6-0-yu-dao-error-installing-libwebp/"/>
+    <id>https://wizhiai.github.io/2020/09/28/ios-shi-yong-cocoapods-an-zhuang-libwebp-0-6-0-yu-dao-error-installing-libwebp/</id>
+    <published>2020-09-28T05:53:45.000Z</published>
+    <updated>2020-09-28T05:54:39.433Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;可能会遇到libwebp v0.6.0 超时问题:&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-csharp&quot;&gt;&lt;code class=&quot;language-csharp&quot;&gt;&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>在页面内隐藏statusbar</title>
+    <link href="https://wizhiai.github.io/2020/09/28/zai-ye-mian-nei-yin-cang-statusbar/"/>
+    <id>https://wizhiai.github.io/2020/09/28/zai-ye-mian-nei-yin-cang-statusbar/</id>
+    <published>2020-09-28T05:52:36.000Z</published>
+    <updated>2020-09-28T05:52:57.464Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;有的时候需要进入页面后，点击某个按钮改变界面，同时需要隐藏状态栏，这个时候就需要手动改变状态栏状态。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一、有关状态栏的隐藏&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1.1、方式一：提示：控制器之间的状态栏不会相互影响
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>view自旋转</title>
+    <link href="https://wizhiai.github.io/2020/09/28/view-zi-xuan-zhuan/"/>
+    <id>https://wizhiai.github.io/2020/09/28/view-zi-xuan-zhuan/</id>
+    <published>2020-09-28T05:52:09.000Z</published>
+    <updated>2020-09-28T05:52:22.930Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;- (&lt;strong&gt;void&lt;/strong&gt;)rotateView:𝑈𝐼𝐼𝑚𝑎𝑔𝑒𝑉𝑖𝑒𝑤∗UIImageView∗view`&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+CABasicAnimation
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mac将app打包dmg文件</title>
+    <link href="https://wizhiai.github.io/2020/09/28/mac-jiang-app-da-bao-dmg-wen-jian/"/>
+    <id>https://wizhiai.github.io/2020/09/28/mac-jiang-app-da-bao-dmg-wen-jian/</id>
+    <published>2020-09-28T05:51:39.000Z</published>
+    <updated>2020-09-28T05:52:19.750Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;首先，得到要打包的app文件，在xcode的Products下，这里可以将xcode设置成release模式，build，再去products文件夹下找到.app文件&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>KVC里的valueforkeypath</title>
+    <link href="https://wizhiai.github.io/2020/09/28/kvc-li-de-valueforkeypath/"/>
+    <id>https://wizhiai.github.io/2020/09/28/kvc-li-de-valueforkeypath/</id>
+    <published>2020-09-28T05:51:06.000Z</published>
+    <updated>2020-09-28T05:51:52.247Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;一、KVC 的用法和实践&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;KVC（Key-value
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS开发JSONModel去除关键字冲突</title>
+    <link href="https://wizhiai.github.io/2020/09/28/ios-kai-fa-jsonmodel-qu-chu-guan-jian-zi-chong-tu/"/>
+    <id>https://wizhiai.github.io/2020/09/28/ios-kai-fa-jsonmodel-qu-chu-guan-jian-zi-chong-tu/</id>
+    <published>2020-09-28T05:50:24.000Z</published>
+    <updated>2020-09-28T05:50:54.542Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;情景模拟,如后台返回JSON数据，如（图一）:&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>OC 字符串包含中文sha1加密算法</title>
+    <link href="https://wizhiai.github.io/2020/09/28/oc-zi-fu-chuan-bao-han-zhong-wen-sha1-jia-mi-suan-fa/"/>
+    <id>https://wizhiai.github.io/2020/09/28/oc-zi-fu-chuan-bao-han-zhong-wen-sha1-jia-mi-suan-fa/</id>
+    <published>2020-09-28T05:49:48.000Z</published>
+    <updated>2020-09-28T05:50:03.642Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;-(NSString *)sha1
+
+{
+
+  // see http://www.makebetterthings.com/iphone/how-to-get-md5-and-sha1-in-objective-c-ios-sdk/
+
+  NSData
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>OC对象，isa和superclass</title>
+    <link href="https://wizhiai.github.io/2020/09/28/oc-dui-xiang-isa-he-superclass/"/>
+    <id>https://wizhiai.github.io/2020/09/28/oc-dui-xiang-isa-he-superclass/</id>
+    <published>2020-09-28T05:48:57.000Z</published>
+    <updated>2020-09-28T05:50:00.222Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;instance对象实例对象实例对象&lt;/p&gt;
+&lt;p&gt;class对象类对象类对象&lt;/p&gt;
+&lt;p&gt;meta-class对象元类对象元类对象&lt;/p&gt;
+&lt;h2 id=&quot;一-instance对象&quot;&gt;&lt;a href=&quot;#一-instance对象&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>wkwebview的坑：iOS10位分水岭，包括跨域和低版本不能再沙盒访问js，css等资源文件</title>
+    <link href="https://wizhiai.github.io/2020/09/28/wkwebview-de-keng-ios10-wei-fen-shui-ling-bao-gua-kua-yu-he-di-ban-ben-bu-neng-zai-sha-he-fang-wen-js-css-deng-zi-yuan-wen-jian/"/>
+    <id>https://wizhiai.github.io/2020/09/28/wkwebview-de-keng-ios10-wei-fen-shui-ling-bao-gua-kua-yu-he-di-ban-ben-bu-neng-zai-sha-he-fang-wen-js-css-deng-zi-yuan-wen-jian/</id>
+    <published>2020-09-28T05:48:10.000Z</published>
+    <updated>2020-09-28T05:48:24.553Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;1：iOS10以下版本，wkwebview不允许在沙盒里访问html里的css，js等外部资源文件，需要转移到tmp文件夹下访问；&lt;/p&gt;
+&lt;p&gt;复制到tmp文件夹下，然后从tmp文件夹下访问即可&lt;/p&gt;
+&lt;p&gt;-(NSString
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>OC lock锁</title>
+    <link href="https://wizhiai.github.io/2020/09/28/oc-lock-suo/"/>
+    <id>https://wizhiai.github.io/2020/09/28/oc-lock-suo/</id>
+    <published>2020-09-28T05:47:31.000Z</published>
+    <updated>2020-09-28T05:47:47.469Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;NSRecursiveLock-trylock-认知&quot;&gt;&lt;a href=&quot;#NSRecursiveLock-trylock-认知&quot; class=&quot;headerlink&quot; title=&quot;NSRecursiveLock trylock
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>实现单例的几个关键</title>
+    <link href="https://wizhiai.github.io/2020/09/28/shi-xian-dan-li-de-ji-ge-guan-jian/"/>
+    <id>https://wizhiai.github.io/2020/09/28/shi-xian-dan-li-de-ji-ge-guan-jian/</id>
+    <published>2020-09-28T05:46:28.000Z</published>
+    <updated>2020-09-28T05:47:06.340Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h6 id=&quot;实现单例的几个关键点：&quot;&gt;&lt;a href=&quot;#实现单例的几个关键点：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
