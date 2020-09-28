@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>flutter appbar返回键</title>
+      <link href="/2020/09/28/flutter-appbar-fan-hui-jian/"/>
+      <url>/2020/09/28/flutter-appbar-fan-hui-jian/</url>
+      
+        <content type="html"><![CDATA[<p>appBar: AppBar(</p><p>  backgroundColor: Color.fromRGBO(248,250,255,1),  //设置appBar背景色<br>  elevation: 0, // 立视度为0<br>  title: Text(<br>    ‘记录’,<br>    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, ),<br>  ),<br>  centerTitle: true, // 居中显示<br>  leading: Container( // 绘制返回键<br>    margin: EdgeInsets.all(10), // 设置边距<br>    decoration: BoxDecoration(<br>      boxShadow: <boxshadow>[<br>        BoxShadow(<br>          offset: Offset(1, 2), // 阴影起始位置<br>          blurRadius: 5, // 阴影面积<br>          color: Colors.grey.withOpacity(.4), // 阴影透明度<br>        )<br>      ],<br>      color: Colors.white, // Container背景色<br>      borderRadius: BorderRadius.all(<br>        Radius.circular(100.0), // Container设置为圆形<br>      ),<br>    ),<br>    child: IconButton(<br>      icon: Icon(<br>        Icons.arrow_back_ios,<br>        size: 20,<br>      ),<br>      onPressed: () {<br>        Navigator.pop(context); // 关闭当前页面<br>      },<br>    )<br>  ),<br>),</boxshadow></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>设置view随键盘升高，点击切换密码模式时，底部暴露出黑色背景</title>
       <link href="/2020/09/28/she-zhi-view-sui-jian-pan-sheng-gao-dian-ji-qie-huan-mi-ma-mo-shi-shi-di-bu-bao-lu-chu-hei-se-bei-jing/"/>
       <url>/2020/09/28/she-zhi-view-sui-jian-pan-sheng-gao-dian-ji-qie-huan-mi-ma-mo-shi-shi-di-bu-bao-lu-chu-hei-se-bei-jing/</url>
