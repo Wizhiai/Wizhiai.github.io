@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wizhiai.github.io/"/>
-  <updated>2020-09-28T08:25:20.793Z</updated>
+  <updated>2020-09-29T09:04:04.110Z</updated>
   <id>https://wizhiai.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>xcode编译项目卡死，项目启动后一分钟内xcode还是卡死转圈圈        ------------  APP的冷启动优化，耗时分析</title>
+    <link href="https://wizhiai.github.io/2020/09/29/xcode-bian-yi-xiang-mu-qia-si-xiang-mu-qi-dong-hou-yi-fen-zhong-nei-xcode-huan-shi-qia-si-zhuan-quan-quan-app-de-leng-qi-dong-you-hua-hao-shi-fen-xi/"/>
+    <id>https://wizhiai.github.io/2020/09/29/xcode-bian-yi-xiang-mu-qia-si-xiang-mu-qi-dong-hou-yi-fen-zhong-nei-xcode-huan-shi-qia-si-zhuan-quan-quan-app-de-leng-qi-dong-you-hua-hao-shi-fen-xi/</id>
+    <published>2020-09-29T06:49:45.000Z</published>
+    <updated>2020-09-29T09:04:04.110Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;刚接手一个项目，发现打开app后运行xcode会在编译后发生短暂的卡死现象，且app启动之后xcode也会有短暂的卡死现象，变现为：一直转圈圈。&lt;/p&gt;
+&lt;p&gt;这个问题肯定出在项目配置上，因为是刚启动就卡死，且我的机子是最新款，32内存。大概有了思路就开始定位。&lt;/p&gt;
+&lt;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>iOS 查看项目编译时间并优化编译速度</title>
     <link href="https://wizhiai.github.io/2020/09/28/ios-cha-kan-xiang-mu-bian-yi-shi-jian-bing-you-hua-bian-yi-su-du/"/>
     <id>https://wizhiai.github.io/2020/09/28/ios-cha-kan-xiang-mu-bian-yi-shi-jian-bing-you-hua-bian-yi-su-du/</id>
     <published>2020-09-28T08:25:04.000Z</published>
-    <updated>2020-09-28T08:25:20.793Z</updated>
+    <updated>2020-09-28T09:00:36.114Z</updated>
     
     <summary type="html">
     
@@ -458,31 +482,6 @@ CABasicAnimation
   // see http://www.makebetterthings.com/iphone/how-to-get-md5-and-sha1-in-objective-c-ios-sdk/
 
   NSData
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>OC对象，isa和superclass</title>
-    <link href="https://wizhiai.github.io/2020/09/28/oc-dui-xiang-isa-he-superclass/"/>
-    <id>https://wizhiai.github.io/2020/09/28/oc-dui-xiang-isa-he-superclass/</id>
-    <published>2020-09-28T05:48:57.000Z</published>
-    <updated>2020-09-28T05:50:00.222Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;instance对象实例对象实例对象&lt;/p&gt;
-&lt;p&gt;class对象类对象类对象&lt;/p&gt;
-&lt;p&gt;meta-class对象元类对象元类对象&lt;/p&gt;
-&lt;h2 id=&quot;一-instance对象&quot;&gt;&lt;a href=&quot;#一-instance对象&quot; class=&quot;headerlink&quot;
         
       
     
