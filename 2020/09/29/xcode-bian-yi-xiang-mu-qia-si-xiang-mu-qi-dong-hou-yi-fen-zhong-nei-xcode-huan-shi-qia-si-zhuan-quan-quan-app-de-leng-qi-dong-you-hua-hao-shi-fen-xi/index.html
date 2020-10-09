@@ -330,7 +330,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -472,14 +472,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
                 
@@ -563,7 +563,7 @@
 </ul>
 </li>
 </ol>
-<p>示例：xcode -&gt; product-&gt;scheme-&gt;run-&gt;arguments-&gt;enviroment Variables 添加DYLD_PRINT_STATISTICS : 1</p>
+<p>示例：xcode -&gt; product-&gt;scheme-&gt;run-&gt;arguments-&gt;enviroment Variables 添加<em>DYLD_PRINT_STATISTICS</em> : 1</p>
 <p><img src="//wizhiai.github.io/2020/09/29/xcode-bian-yi-xiang-mu-qia-si-xiang-mu-qi-dong-hou-yi-fen-zhong-nei-xcode-huan-shi-qia-si-zhuan-quan-quan-app-de-leng-qi-dong-you-hua-hao-shi-fen-xi/image-20200929171545354.png" alt="image-20200929171545354"></p>
 <p><strong>Total pre-main time: 401.36 milliseconds (100.0%)</strong></p>
 <p>​     <u><strong>dylib loading time</strong></u>: 186.35 milliseconds (46.4%)</p>
@@ -579,7 +579,20 @@
 <p>知道删除了masonry导入后，发现卡死现象直接没了。我又把其他头文件恢复，测试只删除masonry，也是直接解决了卡死现象。那这就奇怪了，为啥masonry影响这么大呢？</p>
 <p>但是其他项目试着在pch导入masonry，没有这么卡死的现象，仅这个项目有，虽然解决了，但是原因暂时还是没发现。</p>
 <p>看下masonry源码。</p>
-<p>​         </p>
+<pre><code>     问题1：这是应用一对一听课或一对多听课吗?</code></pre><p>答：此应用中的上课模块，是一对多的，文字方式的授课。</p>
+<p>问题2：应用程序提供直播在线听课或录制的视频课件吗?<br>答：不提供直播在线听课或者视频课件。文字形式(点击可播放文字对应的音频)的听课。效果如下附件图2-1.jpg。</p>
+<p>问题3：目标受众是谁?<br>答：公司内部员工。可在“我的”页面点击“加入企业”输入邀请码BlmXnpJl以加入企业，如图3-1.jpg（测试账号已经加入过企业）。</p>
+<p>问题4：你的应用程序访问任何付费内容或服务吗?<br>答：此应用不访问任何付费内容或服务，全部免费。</p>
+<p>问题5：描述应用程序中任何付费内容或服务，以及支付方式。<br>答：此应用不不涉及任何付费内容或服务，无支付。</p>
+<p>问题6：是个人客户为内容或服务付费，还是公司为其用户购买内容或服务?<br>答：此应用不不涉及任何付费内容或服务，无支付，输入邀请码即可加入本公司学习内容。加入方式见图3-1.jpg。</p>
+<p>问题7：这个应用程序是用于一个公司还是多个客户公司?<br>答：一个公司。</p>
+<p>问题8：该应用程序是为某一特定公司的内部使用(员工、合作伙伴等)吗?<br>答：是的。</p>
+<p>问题9：用户如何取得帐户?<br>答：用户自行创建账号，随后在“我的”页面点击“加入企业”输入邀请码BlmXnpJl以加入企业，需要后台审核确定为本公司员工后通过，如图3-1.jpg（测试账号已经加入过企业）。</p>
+<p>问题10：创建帐户是否涉及费用?<br>答：不涉及费用，全部免费。</p>
+<p>问题11：这个应用程序将主要在哪些国家发行?<br>答：主要，且仅在中国发行。</p>
+<p>mach-o</p>
+<p>fishhook</p>
+<p>dyld</p>
 
             </div>
             <hr />
@@ -1042,37 +1055,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/29/xcode-bian-yi-xiang-mu-qia-si-xiang-mu-qi-dong-hou-yi-fen-zhong-nei-xcode-huan-shi-qia-si-zhuan-quan-quan-app-de-leng-qi-dong-you-hua-hao-shi-fen-xi/">
+                <a href="/2020/10/09/dao-chu-ios-de-ying-yong-ipa-bao-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="xcode编译项目卡死，项目启动后一分钟内xcode还是卡死转圈圈        ------------  APP的冷启动优化，耗时分析">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="导出iOS的应用ipa包文件">
                         
-                        <span class="card-title">xcode编译项目卡死，项目启动后一分钟内xcode还是卡死转圈圈        ------------  APP的冷启动优化，耗时分析</span>
+                        <span class="card-title">导出iOS的应用ipa包文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            刚接手一个项目，发现打开app后运行xcode会在编译后发生短暂的卡死现象，且app启动之后xcode也会有短暂的卡死现象，变现为：一直转圈圈。
-这个问题肯定出在项目配置上，因为是刚启动就卡死，且我的机子是最新款，32内存。大概有了思路就开
+                            1. Apple Configurator 2在App Store搜索“Apple Configurator 2”下载安装（最低适配macOS 10.14）准备工作： Apple ID账号密码， Apple设备。步骤：
+
+1.1 连接设备到
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-09
+                        </span>
                         <span class="publish-author">
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1087,7 +1099,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="iOS 查看项目编译时间并优化编译速度">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="iOS 查看项目编译时间并优化编译速度">
                         
                         <span class="card-title">iOS 查看项目编译时间并优化编译速度</span>
                     </div>
@@ -1289,7 +1301,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">23.6k</span>
+            <span class="white-color">24.3k</span>
             
 
             <br>

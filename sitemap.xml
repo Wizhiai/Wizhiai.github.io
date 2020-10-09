@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wizhiai.github.io/2020/10/09/dao-chu-ios-de-ying-yong-ipa-bao-wen-jian/</loc>
+    
+    <lastmod>2020-10-09T00:55:30.602Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wizhiai.github.io/2020/09/29/xcode-bian-yi-xiang-mu-qia-si-xiang-mu-qi-dong-hou-yi-fen-zhong-nei-xcode-huan-shi-qia-si-zhuan-quan-quan-app-de-leng-qi-dong-you-hua-hao-shi-fen-xi/</loc>
     
-    <lastmod>2020-09-29T09:26:04.238Z</lastmod>
+    <lastmod>2020-10-09T00:53:21.767Z</lastmod>
     
   </url>
   
@@ -282,14 +289,14 @@
   </url>
   
   <url>
-    <loc>https://wizhiai.github.io/CNAME.html</loc>
+    <loc>https://wizhiai.github.io/404.html</loc>
     
     <lastmod>2020-09-25T08:35:17.575Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wizhiai.github.io/404.html</loc>
+    <loc>https://wizhiai.github.io/CNAME.html</loc>
     
     <lastmod>2020-09-25T08:35:17.575Z</lastmod>
     

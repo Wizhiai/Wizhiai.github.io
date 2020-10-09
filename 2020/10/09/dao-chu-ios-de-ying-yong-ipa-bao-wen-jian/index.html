@@ -4,17 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="mach port, coding">
+    <meta name="keywords" content="导出iOS的应用ipa包文件, coding">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="Runloop 保证不退出
-mode
-唤醒
-mach——send_msg 唤醒mach——rcv——msg
-Runloopgetmain
-Sdtable 存放getcurrendrunloop
-线程保活：runloop存在time sour">
+    <meta name="description" content="1. Apple Configurator 2在App Store搜索“Apple Configurator 2”下载安装（最低适配macOS 10.14）准备工作： Apple ID账号密码， Apple设备。步骤：
+
+1.1 连接设备到">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +18,7 @@ Sdtable 存放getcurrendrunloop
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>mach port | LJ的博客</title>
+    <title>导出iOS的应用ipa包文件 | LJ的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -335,13 +331,13 @@ Sdtable 存放getcurrendrunloop
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        mach port
+                        导出iOS的应用ipa包文件
                     </div>
                 </div>
             </div>
@@ -463,7 +459,7 @@ Sdtable 存放getcurrendrunloop
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-28
+                    2020-10-09
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -477,7 +473,7 @@ Sdtable 存放getcurrendrunloop
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    30
+                    142
                 </div>
                 
 
@@ -500,13 +496,12 @@ Sdtable 存放getcurrendrunloop
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Runloop 保证不退出</p>
-<p>mode</p>
-<p>唤醒</p>
-<p>mach——send_msg 唤醒mach——rcv——msg</p>
-<p>Runloopgetmain</p>
-<p>Sdtable 存放getcurrendrunloop</p>
-<p>线程保活：runloop存在time sources 和</p>
+                <h2 id="1-Apple-Configurator-2"><a href="#1-Apple-Configurator-2" class="headerlink" title="1. Apple Configurator 2"></a>1. Apple Configurator 2</h2><p>在App Store搜索“Apple Configurator 2”下载安装（最低适配macOS 10.14）<br>准备工作： Apple ID账号密码， Apple设备。<br>步骤：</p>
+<ul>
+<li>1.1 连接设备到Mac, 菜单 -&gt; 账户 -&gt; 登录<br><img src="//wizhiai.github.io/2020/10/09/dao-chu-ios-de-ying-yong-ipa-bao-wen-jian/format,png.png" alt="avatar"></li>
+<li>1.2 添加 -&gt; 应用， 这里会显示你的已购记录，选中应用后添加。这个过程和网速有关，需要等待应用在手机上安装完成。<br><img src="//wizhiai.github.io/2020/10/09/dao-chu-ios-de-ying-yong-ipa-bao-wen-jian/format,png-20201009085411597.png" alt="avatar"><br>如果你已经安装了应用，不要点击任何操作！</li>
+<li>1.3 command+shift+G 进入文件夹~/Library/Group Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/Assets/TemporaryItems/MobileApps/<br><img src="//wizhiai.github.io/2020/10/09/dao-chu-ios-de-ying-yong-ipa-bao-wen-jian/format,png-20201009085411442.png" alt="avatar"></li>
+</ul>
 
             </div>
             <hr />
@@ -665,9 +660,9 @@ Sdtable 存放getcurrendrunloop
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《mach port》
+                    《导出iOS的应用ipa包文件》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/09/28/mach-port/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/10/09/dao-chu-ios-de-ying-yong-ipa-bao-wen-jian/" property="cc:attributionName"
                rel="cc:attributionURL">
                 胡
             </a> 采用
@@ -969,36 +964,38 @@ Sdtable 存放getcurrendrunloop
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/28/bei-sai-er-qu-xian-yuan-huan-yuan-jiao/">
+                <a href="/2020/10/09/dao-chu-ios-de-ying-yong-ipa-bao-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="贝塞尔曲线圆环圆角">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="导出iOS的应用ipa包文件">
                         
-                        <span class="card-title">贝塞尔曲线圆环圆角</span>
+                        <span class="card-title">导出iOS的应用ipa包文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CAShaperLayer和UIBezierPath都已经设置为kCGLineJoinRound
-圆环的填充要设置_mainLine.lineCap = kCALineCapRound;
+                            1. Apple Configurator 2在App Store搜索“Apple Configurator 2”下载安装（最低适配macOS 10.14）准备工作： Apple ID账号密码， Apple设备。步骤：
 
+1.1 连接设备到
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-09
+                            </span>
                         <span class="publish-author">
                             
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1009,31 +1006,25 @@ Sdtable 存放getcurrendrunloop
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/28/centos-geng-huan-mysql-bian-ma-yi-bian-zhi-chi-emoji-biao-qing/">
+                <a href="/2020/09/29/xcode-bian-yi-xiang-mu-qia-si-xiang-mu-qi-dong-hou-yi-fen-zhong-nei-xcode-huan-shi-qia-si-zhuan-quan-quan-app-de-leng-qi-dong-you-hua-hao-shi-fen-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="centos 更换mysql编码，以便支持emoji表情">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="xcode编译项目卡死，项目启动后一分钟内xcode还是卡死转圈圈        ------------  APP的冷启动优化，耗时分析">
                         
-                        <span class="card-title">centos 更换mysql编码，以便支持emoji表情</span>
+                        <span class="card-title">xcode编译项目卡死，项目启动后一分钟内xcode还是卡死转圈圈        ------------  APP的冷启动优化，耗时分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-更改 /etc/mysql/my.cnf, 添加如下内容:
-
-[client]
-default-character-set = utf8mb4
-[mysql]
-default-character-set = utf8mb4
-[mysqld
+                            刚接手一个项目，发现打开app后运行xcode会在编译后发生短暂的卡死现象，且app启动之后xcode也会有短暂的卡死现象，变现为：一直转圈圈。
+这个问题肯定出在项目配置上，因为是刚启动就卡死，且我的机子是最新款，32内存。大概有了思路就开
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-29
                             </span>
                         <span class="publish-author">
                             

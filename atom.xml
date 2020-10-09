@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wizhiai.github.io/"/>
-  <updated>2020-09-29T09:26:04.238Z</updated>
+  <updated>2020-10-09T00:55:30.602Z</updated>
   <id>https://wizhiai.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>导出iOS的应用ipa包文件</title>
+    <link href="https://wizhiai.github.io/2020/10/09/dao-chu-ios-de-ying-yong-ipa-bao-wen-jian/"/>
+    <id>https://wizhiai.github.io/2020/10/09/dao-chu-ios-de-ying-yong-ipa-bao-wen-jian/</id>
+    <published>2020-10-09T00:55:21.000Z</published>
+    <updated>2020-10-09T00:55:30.602Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-Apple-Configurator-2&quot;&gt;&lt;a href=&quot;#1-Apple-Configurator-2&quot; class=&quot;headerlink&quot; title=&quot;1. Apple Configurator 2&quot;&gt;&lt;/a&gt;1. Apple
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>xcode编译项目卡死，项目启动后一分钟内xcode还是卡死转圈圈        ------------  APP的冷启动优化，耗时分析</title>
     <link href="https://wizhiai.github.io/2020/09/29/xcode-bian-yi-xiang-mu-qia-si-xiang-mu-qi-dong-hou-yi-fen-zhong-nei-xcode-huan-shi-qia-si-zhuan-quan-quan-app-de-leng-qi-dong-you-hua-hao-shi-fen-xi/"/>
     <id>https://wizhiai.github.io/2020/09/29/xcode-bian-yi-xiang-mu-qia-si-xiang-mu-qi-dong-hou-yi-fen-zhong-nei-xcode-huan-shi-qia-si-zhuan-quan-quan-app-de-leng-qi-dong-you-hua-hao-shi-fen-xi/</id>
     <published>2020-09-29T06:49:45.000Z</published>
-    <updated>2020-09-29T09:26:04.238Z</updated>
+    <updated>2020-10-09T00:53:21.767Z</updated>
     
     <summary type="html">
     
@@ -454,34 +476,6 @@ CABasicAnimation
         
           &lt;p&gt;情景模拟,如后台返回JSON数据，如（图一）:&lt;/p&gt;
 &lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>OC 字符串包含中文sha1加密算法</title>
-    <link href="https://wizhiai.github.io/2020/09/28/oc-zi-fu-chuan-bao-han-zhong-wen-sha1-jia-mi-suan-fa/"/>
-    <id>https://wizhiai.github.io/2020/09/28/oc-zi-fu-chuan-bao-han-zhong-wen-sha1-jia-mi-suan-fa/</id>
-    <published>2020-09-28T05:49:48.000Z</published>
-    <updated>2020-09-28T05:50:03.642Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre&gt;&lt;code&gt;-(NSString *)sha1
-
-{
-
-  // see http://www.makebetterthings.com/iphone/how-to-get-md5-and-sha1-in-objective-c-ios-sdk/
-
-  NSData
         
       
     
