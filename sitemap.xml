@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wizhiai.github.io/2020/10/14/kuai-jie-zu-jian-zhi-yin/</loc>
+    
+    <lastmod>2020-11-12T06:50:13.050Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wizhiai.github.io/2020/10/12/shi-yong-jenkins-shi-xian-chi-xu-ji-cheng-ios/</loc>
+    
+    <lastmod>2020-11-05T12:38:18.814Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wizhiai.github.io/2020/10/12/fastlane-shi-yong-shuo-ming-shu/</loc>
+    
+    <lastmod>2020-10-13T05:14:56.304Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wizhiai.github.io/2020/10/09/hua-shuo-lu-you-qi-da-jian-nas-wai-wang-fang-wen-jia-ting-zi-liao-bei-fen-pian-ku/</loc>
+    
+    <lastmod>2020-10-12T01:48:10.204Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wizhiai.github.io/2020/10/09/dao-chu-ios-de-ying-yong-ipa-bao-wen-jian/</loc>
     
     <lastmod>2020-10-09T00:55:30.602Z</lastmod>
@@ -198,13 +226,6 @@
   </url>
   
   <url>
-    <loc>https://wizhiai.github.io/about/index.html</loc>
-    
-    <lastmod>2020-09-25T08:35:17.586Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://wizhiai.github.io/archives/index.html</loc>
     
     <lastmod>2020-09-25T08:35:17.586Z</lastmod>
@@ -212,7 +233,7 @@
   </url>
   
   <url>
-    <loc>https://wizhiai.github.io/categories/index.html</loc>
+    <loc>https://wizhiai.github.io/about/index.html</loc>
     
     <lastmod>2020-09-25T08:35:17.586Z</lastmod>
     
@@ -220,6 +241,13 @@
   
   <url>
     <loc>https://wizhiai.github.io/contact/index.html</loc>
+    
+    <lastmod>2020-09-25T08:35:17.586Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wizhiai.github.io/categories/index.html</loc>
     
     <lastmod>2020-09-25T08:35:17.586Z</lastmod>
     
@@ -289,14 +317,14 @@
   </url>
   
   <url>
-    <loc>https://wizhiai.github.io/404.html</loc>
+    <loc>https://wizhiai.github.io/CNAME.html</loc>
     
     <lastmod>2020-09-25T08:35:17.575Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wizhiai.github.io/CNAME.html</loc>
+    <loc>https://wizhiai.github.io/404.html</loc>
     
     <lastmod>2020-09-25T08:35:17.575Z</lastmod>
     

@@ -1,0 +1,1972 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="fastlane使用说明书, coding">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
+    <meta name="description" content="2020-04-21 更新大部分细节都类似，有一个绕过两步验证的更新一下， 其实你开一个有上传权限的子账号 就可以绕过两步验证，子账号没有强制要求两步验证。
+05-15新版本内容变化，大致没太多改动，一些新细节整理一下1、用swift初始化">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>fastlane使用说明书 | LJ的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">LJ的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-comments"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">LJ的博客</div>
+        <div class="logo-desc">
+            
+            coding
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-comments"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/wizhiai/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/wizhiai/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        fastlane使用说明书
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        <span class="chip bg-color">无标签</span>
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-10-12
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    胡
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    22 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="2020-04-21-更新"><a href="#2020-04-21-更新" class="headerlink" title="2020-04-21 更新"></a>2020-04-21 更新</h3><p>大部分细节都类似，有一个绕过两步验证的更新一下， 其实你开一个有上传权限的子账号 就可以绕过两步验证，子账号没有强制要求两步验证。</p>
+<h3 id="05-15新版本内容变化，大致没太多改动，一些新细节整理一下"><a href="#05-15新版本内容变化，大致没太多改动，一些新细节整理一下" class="headerlink" title="05-15新版本内容变化，大致没太多改动，一些新细节整理一下"></a>05-15新版本内容变化，大致没太多改动，一些新细节整理一下</h3><h4 id="1、用swift初始化Fastlane-beta"><a href="#1、用swift初始化Fastlane-beta" class="headerlink" title="1、用swift初始化Fastlane (beta)"></a>1、用swift初始化Fastlane (beta)</h4><p>1、To have your <code>Fastfile</code> configuration written in Swift (Beta) <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.fastlane.tools%2Fgetting-started%2Fios%2Ffastlane-swift%2F" target="_blank" rel="noopener">DOC</a></p>
+<p>看描述就很清楚知道，这是使用swift来替代之前的ruby编写脚本文件，缩减学习成本, 只要你懂swift就可以写lane去跑对应的事件。</p>
+<p>2、Open the file located at <code>[project]/fastlane/swift/FastlaneRunner/FastlaneRunner.xcodeproj</code> to configure your lanes in <code>Fastfile.</code></p>
+<p>其实本质上就是一个工程，如上，官方在fastlane目录下放置了对应swift工程，我们可以通过工程进行lanes的开发。简单测试了一下，lane被具象化为一个对象，所有你希望可以终端执行的lane，swift方法名以Lane结尾就可以：myLane、yourLane。</p>
+<pre class="line-numbers language-swift"><code class="language-swift">fastlane <span class="token keyword">init</span> swift
+
+得到的fastfile（选择了自动提示的 <span class="token builtin">Automate</span> beta distribution to <span class="token builtin">TestFlight</span>）：
+
+<span class="token keyword">import</span> <span class="token builtin">Foundation</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Fastfile</span><span class="token punctuation">:</span> <span class="token builtin">LaneFile</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">func</span> <span class="token function">betaLane</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">desc</span><span class="token punctuation">(</span><span class="token string">"Push a new beta build to TestFlight"</span><span class="token punctuation">)</span>
+        <span class="token function">incrementBuildNumber</span><span class="token punctuation">(</span>xcodeproj<span class="token punctuation">:</span> <span class="token string">"xxx.xcodeproj"</span><span class="token punctuation">)</span>
+        <span class="token function">buildApp</span><span class="token punctuation">(</span>workspace<span class="token punctuation">:</span> <span class="token string">"xxx.xcworkspace"</span><span class="token punctuation">,</span> scheme<span class="token punctuation">:</span> <span class="token string">"xxx"</span><span class="token punctuation">)</span>
+        <span class="token function">uploadToTestflight</span><span class="token punctuation">(</span>username<span class="token punctuation">:</span> <span class="token string">"xxx@xx.com"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3、Run <code>fastlane &lt;laneName&gt;</code> in your terminal to execute <em>fastlane</em>.</p>
+<p>终端命令操作没有太大改变, lane调用的时候可以忽略尾部后缀Lane。 参数传递方式如下：</p>
+<pre class="line-numbers language-swift"><code class="language-swift">fastlane <span class="token punctuation">[</span>lane<span class="token punctuation">]</span> key<span class="token punctuation">:</span>value key2<span class="token punctuation">:</span>value2
+fastlane deploy submit<span class="token punctuation">:</span><span class="token boolean">false</span> build_number<span class="token punctuation">:</span><span class="token number">24</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Fastfile</span><span class="token punctuation">:</span> <span class="token builtin">LaneFile</span> <span class="token punctuation">{</span>
+    <span class="token keyword">func</span> <span class="token function">deployLane</span><span class="token punctuation">(</span>withOptions options<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">:</span> <span class="token builtin">String</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// ...</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> submit <span class="token operator">=</span> options<span class="token operator">?</span><span class="token punctuation">[</span><span class="token string">"submit"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> submit <span class="token operator">==</span> <span class="token string">"true"</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// Only when submit is true</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// ...</span>
+        <span class="token function">incrementBuildNumber</span><span class="token punctuation">(</span>buildNumber<span class="token punctuation">:</span> options<span class="token operator">?</span><span class="token punctuation">[</span><span class="token string">"build_number"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">// ...</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2、Running-Tests"><a href="#2、Running-Tests" class="headerlink" title="2、Running Tests"></a>2、Running Tests</h3><p>run_tests action ,具体详情可以 执行 fastlane action run_tests 查看。可以配合CI执行单元测试，并且还可以提交测试结果到一些平台： <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.fastlane.tools%2Factions%2F%23notifications" target="_blank" rel="noopener">fastlane actions</a>.</p>
+<h3 id="3、Deployment"><a href="#3、Deployment" class="headerlink" title="3、Deployment"></a>3、Deployment</h3><p>打包具体变化不大，原来的actions 做了一些Alias (对安卓的支持力度加大，很多东西需要区分)</p>
+<p>gym =&gt; <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.fastlane.tools%2Factions%2Fbuild_ios_app%2F" target="_blank" rel="noopener">build_ios_app</a> | <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.fastlane.tools%2Factions%2Fbuild_app%2F" target="_blank" rel="noopener">build_app</a></p>
+<p>gradle =&gt; <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.fastlane.tools%2Factions%2Fbuild_android_app%2F" target="_blank" rel="noopener">build_android_app</a></p>
+<p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.fastlane.tools%2Factions%2F" target="_blank" rel="noopener">Actions列表</a></p>
+<h3 id="4、-关于两步验证的问题"><a href="#4、-关于两步验证的问题" class="headerlink" title="4、 关于两步验证的问题"></a>4、 关于两步验证的问题</h3><p>老样子，没有什么进步，依然是specific password 和cookies 进行一个月的保存，还是需要每个月更新。</p>
+<p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.fastlane.tools%2Fbest-practices%2Fcontinuous-integration%2F%23two-step-or-two-factor-auth" target="_blank" rel="noopener">Two-Step</a></p>
+<hr>
+<h2 id="fastlane-介绍"><a href="#fastlane-介绍" class="headerlink" title="fastlane 介绍"></a>fastlane 介绍</h2><p>fastlane是用Ruby语言编写的一套自动化工具集和框架，每一个工具实际都对应一个Ruby脚本，用来执行某一个特定的任务，而fastlane核心框架则允许使用者通过类似配置文件的形式，将不同的工具有机而灵活的结合在一起，从而形成一个个完整的自动化流程。比如我需要完成一套发布流程：</p>
+<pre class="line-numbers language-ruby"><code class="language-ruby"><span class="token comment" spellcheck="true">#发布到AppStore</span>
+
+lane <span class="token symbol">:release</span> <span class="token keyword">do</span>
+  <span class="token comment" spellcheck="true">#增加build版本号,需要先配置build setting</span>
+  increment_build_number
+  <span class="token comment" spellcheck="true">#pod资源更新</span>
+  cocoapods
+  <span class="token comment" spellcheck="true">#打包</span>
+  gym
+  <span class="token comment" spellcheck="true">#发布到AppStore</span>
+  <span class="token function">deliver</span><span class="token punctuation">(</span>force<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">#发布testflight测试</span>
+  testflight
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="依赖环境："><a href="#依赖环境：" class="headerlink" title="依赖环境："></a>依赖环境：</h4><ul>
+<li>Xcode7 + （本文：xcode 9.3）</li>
+<li>macOS or Linux with Ruby 2.0.0 + （本文：ruby 2.4.0 ）</li>
+</ul>
+<h4 id="本文版本："><a href="#本文版本：" class="headerlink" title="本文版本："></a>本文版本：</h4><p>fastlane版本：<del>2.53.1</del> 已更新到 2.105.2</p>
+<h4 id="文档地址："><a href="#文档地址：" class="headerlink" title="文档地址："></a>文档地址：</h4><p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.fastlane.tools" target="_blank" rel="noopener">Doc</a></p>
+<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><p>[sudo] gem install fastlane</p>
+<pre class="line-numbers language-php"><code class="language-php">如果用的是mac自带的ruby，需要 sudo权限
+使用<span class="token punctuation">:</span> sudo gem install fastlane
+
+如果报错：<span class="token constant">ERROR</span><span class="token punctuation">:</span> <span class="token keyword">While</span> executing gem <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">(</span>Errno<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">EPERM</span><span class="token punctuation">)</span> Operation not permitted <span class="token operator">-</span> <span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>commander 
+使用<span class="token punctuation">:</span> sudo gem install <span class="token operator">-</span>n <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>bin fastlane<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="初始化："><a href="#初始化：" class="headerlink" title="初始化："></a>初始化：</h4><p>在项目根目录下，初始化Fastlane：</p>
+<pre class="line-numbers language-kotlin"><code class="language-kotlin">fastlane <span class="token keyword">init</span>
+
+新版本安装的时候出现了下面的分支选择，按要求选择就行
+
+<span class="token number">1</span><span class="token punctuation">.</span> 📸  Automate screenshots
+<span class="token number">2</span><span class="token punctuation">.</span> 👩‍✈️  Automate beta distribution <span class="token keyword">to</span> <span class="token function">TestFlight</span> <span class="token punctuation">(</span>自动testfilght型配置<span class="token punctuation">)</span>
+<span class="token number">3</span><span class="token punctuation">.</span> 🚀  Automate App Store <span class="token function">distribution</span> <span class="token punctuation">(</span>自动发布型配置<span class="token punctuation">)</span>
+<span class="token number">4</span><span class="token punctuation">.</span> 🛠  Manual setup <span class="token operator">-</span> manually setup your project <span class="token keyword">to</span> automate <span class="token function">your</span> <span class="token punctuation">(</span>需要手动配置内容<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>fastlane操作改变后我们再了解一下有哪些配置文件：</p>
+<pre class="line-numbers language-dart"><code class="language-dart">Appfile<span class="token punctuation">:</span> 存储有关开发者账号相关信息
+
+Fastfile<span class="token punctuation">:</span> 核心文件，主要用于 命令行调用和处理具体的流程，lane相对于一个方法或者函数
+
+Deliverfile<span class="token punctuation">:</span> deliver工具的配置文件
+metadata<span class="token punctuation">:</span> 元数据文件夹
+
+Matchfile<span class="token punctuation">:</span> Match操作对应的配置文件
+
+screenshots<span class="token punctuation">:</span> 截图文件夹<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>除开手动配置项，fastlane 会要求填写Apple ID，选择你的Team(如果有多个) 然后fastlane会自动检测当前目录下项目的App Name和App Identifier、Project。然后自行确认并按流程执行。</p>
+<h4 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h4><ul>
+<li>fastlane actions: 展示所有有效action列表</li>
+<li>fastlane action [action_name]: 展示一个action的详细说明，使用方法等</li>
+<li>fastlane lanes: 展示fastfile中的所有lane</li>
+<li>fastlane list: 展示fastfile中的所有的有效的lane</li>
+<li>fastlane new_action: 创建一个新的action</li>
+<li>fastlane env: 打印fastlane、ruby环境，一般提bug到issue的时候会要求提供</li>
+</ul>
+<h4 id="生命周期："><a href="#生命周期：" class="headerlink" title="生命周期："></a>生命周期：</h4><table>
+<thead>
+<tr>
+<th>执行顺序</th>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>before_all</td>
+<td>在执行 lane 之前只执行一次</td>
+</tr>
+<tr>
+<td>2</td>
+<td>before_each</td>
+<td>每次执行 lane 之前都会执行一次</td>
+</tr>
+<tr>
+<td>3</td>
+<td>lane</td>
+<td>自定义的任务</td>
+</tr>
+<tr>
+<td>4</td>
+<td>after_each</td>
+<td>每次执行 lane 之后都会执行一次</td>
+</tr>
+<tr>
+<td>5</td>
+<td>after_all</td>
+<td>在执行 lane 成功结束之后执行一次</td>
+</tr>
+<tr>
+<td>6</td>
+<td>error</td>
+<td>在执行上述情况任意环境报错都会中止并执行一次</td>
+</tr>
+</tbody></table>
+<h4 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h4><p>1.如果Deliverfile、screenshots和metadata没有自动生成，通过deliver init 可以重新初始化</p>
+<p>2.fastlane的配置会要求输入开发者账号密码，通过spaceship与Apple交互，并会产生一份有效期一个月的cookies文件：文件地址： ~/.fastlane/spaceship/[email]/cookie （两步验证问题）</p>
+<p>3.Matchfile: match 这个action的配置文件，fastlane match init 自动生成，存放git地址等</p>
+<h2 id="fastlane-使用"><a href="#fastlane-使用" class="headerlink" title="fastlane 使用"></a>fastlane 使用</h2><h3 id="lane的使用"><a href="#lane的使用" class="headerlink" title="lane的使用"></a>lane的使用</h3><p>lane是fastfile中的方法定义标签，可以理解为swift中定义一个函数，前面的 func。fastlane 都是基于ruby，所以fastfile中也是使用ruby语法的。</p>
+<p>定义一个简单的无参lane</p>
+<pre class="line-numbers language-ruby"><code class="language-ruby">lane <span class="token symbol">:package</span>
+    puts <span class="token string">"这是一个lane"</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>定义一个带参的lane，在fastfile中option类似于一个字典集。我们可以通过 option[:configuration] 取其中value</p>
+<pre class="line-numbers language-java"><code class="language-java"> lane <span class="token operator">:</span><span class="token keyword">package</span> <span class="token keyword">do</span> <span class="token operator">|</span>option<span class="token operator">|</span> 
+    configuration <span class="token operator">=</span> option<span class="token punctuation">[</span><span class="token operator">:</span>configuration<span class="token punctuation">]</span>
+    puts configuration
+ end
+
+ <span class="token comment" spellcheck="true">//lane的调用</span>
+ <span class="token keyword">package</span><span class="token punctuation">(</span>configuration<span class="token operator">:</span> <span class="token string">'Release'</span><span class="token punctuation">,</span> export_method<span class="token operator">:</span> <span class="token string">'ad-hoc'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><p>除开我们自定义fastfile中的方法，fastlane还提供了很多已经写好的独立的方法库，也就是Actions。</p>
+<p>Action是Fastlane自动化流程中的最小执行单元，直观上来讲就是Fastfile脚本中的一个个命令，而这些命令背后都对应一个用Ruby编写的脚本。</p>
+<p>到目前为止，Fastlane的工具集大约包含180多个Action，基本上涵盖了打包，签名，测试，部署，发布，库管理等等移动开发中涉及到的内容。</p>
+<pre class="line-numbers language-undefined"><code class="language-undefined">fastlane actions : 查看action列表
+
+fastlane action  action_name：查看具体action 描述<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="常用Action"><a href="#常用Action" class="headerlink" title="常用Action"></a>常用Action</h4><p>Action列表文档: <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.fastlane.tools%2Factions%2F" target="_blank" rel="noopener">Actions</a></p>
+<p>我们常用的主要包括下面几部分，其他action的使用可以参考官方文档:</p>
+<ul>
+<li><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffastlane%2Ffastlane%2Ftree%2Fmaster%2Fscan" target="_blank" rel="noopener">scan</a> =&gt; 自动运行测试工具，并且可以生成漂亮的HTML报告</li>
+<li><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffastlane%2Ffastlane%2Ftree%2Fmaster%2Fmatch" target="_blank" rel="noopener">match</a> =&gt; 一个新的证书和配置文件管理工具。把所有需要用到的证书传到git私有库上，任何需要配置的机器直接用match同步回来就不用管证书问题了</li>
+<li><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffastlane%2Ffastlane%2Ftree%2Fmaster%2Fgym" target="_blank" rel="noopener">gym</a> =&gt; Fastlane家族的自动化编译工具，和其他工具配合的非常默契</li>
+<li><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffastlane%2Ffastlane%2Ftree%2Fmaster%2Fdeliver" target="_blank" rel="noopener">deliver</a> =&gt; 自动上传截图，APP的元数据，二进制(ipa)文件到iTunes Connect</li>
+<li><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffastlane%2Ffastlane%2Ftree%2Fmaster%2Fpilot" target="_blank" rel="noopener">pilot</a> =&gt; 管理TestFlight的测试用户，上传二进制文件</li>
+<li><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffastlane%2Ffastlane%2Ftree%2Fmaster%2Fspaceship" target="_blank" rel="noopener">spaceship</a> =&gt; 为pilot，boarding和deliver等工具提供和 iTC 和 ADC 的交互API。spaceship本来是个独立的项目，后来被Fastlane收编进来 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffastlane%2Fitc-api-docs" target="_blank" rel="noopener">非官方的iTunes Connect JSON API的文档</a></li>
+</ul>
+<h4 id="常用Action使用"><a href="#常用Action使用" class="headerlink" title="常用Action使用"></a>常用Action使用</h4><p>scan</p>
+<pre class="line-numbers language-bash"><code class="language-bash">release情况下无法正常运行scan，需要手动去Build Setting中更改enable Testability 在release 下的状态，改为 yes才可以运行。但是官方不建议做release下开启，Test一般在development configuration 下执行。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>match</p>
+<pre class="line-numbers language-bash"><code class="language-bash">一个新的证书和配置文件管理工具。它会把所有需要用到的证书传到git私有库上，任何需要配置的机器直接用match同步回来就不用管证书问题了。保证大家用的都是同一份。不过我们一般都是一台机器需要用到distribution证书，所以意义不大。
+
+1.match只认识通过match方式创建的pp文件 证书，其他方式创建的不予理会。
+2.使用match 需要先撤销现在的证书。
+3.如果苹果端的证书,pp文件已删除，那么远端git上的文件也会失效，并且在重新match的时候会失败,好像就只能删光 git端内容，重新match一遍。
+
+常用参数：
+git_url ： 指定对应git地址
+git_branch ： 指定对应branch
+<span class="token function">type</span> ：请求文件类型, appstore, adhoc, development, enterprise
+app_identifier ： app_bundle_identify
+clone_branch_directly <span class="token keyword">:</span> 只更新对应branch，只有在存在这个branch时才生效
+force_for_new_devices <span class="token keyword">:</span> 如果设备devices列表更新了，就强制更新配置概要文件
+verbose ：打印出额外的信息和所有的命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>gym</p>
+<pre class="line-numbers language-rust"><code class="language-rust">常用参数：
+scheme ：指定打的哪个scheme
+project ：指定<span class="token function">project</span> <span class="token punctuation">(</span>未使用cocopods<span class="token punctuation">)</span>
+workspace ：指定<span class="token function">workspace</span> <span class="token punctuation">(</span>使用cocopods<span class="token punctuation">)</span>
+clean ：打包前clean
+xcargs ： 附加一些参数传递给xcodebuild 如： xcargs<span class="token punctuation">:</span> <span class="token string">'DEBUG_INFORMATION_FORMAT="dwarf-with-dsym"'</span><span class="token punctuation">,</span>
+export_method ：出包方法 app<span class="token operator">-</span>store<span class="token punctuation">,</span> ad<span class="token operator">-</span>hoc<span class="token punctuation">,</span> package<span class="token punctuation">,</span> enterprise<span class="token punctuation">,</span> development
+configuration ： 指定构建App的配置  Release、Debug、自定义
+output_directory ： 输出目录
+output_name ：输出名称
+include_symbols ：是否包含调试符号
+include_bitcode ：是否开启bitcode
+
+纯swift工程打包，在非appstore证书下签出来的包都缺少一个swiftsupport文件夹，里面放的是swift的支持库。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>deliver</p>
+<pre class="line-numbers language-ruby"><code class="language-ruby">用于直接发包到appstore，可以选择跳过图片和元数据上传，只提包，后面再配图和数据：如下 skip_screenshots 和  skip_metadata 参数
+ <span class="token function">deliver</span><span class="token punctuation">(</span>
+    ipa<span class="token punctuation">:</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>OUTPUT_DIRECTORY<span class="token delimiter tag">}</span></span>"</span> <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>IPA_NAME<span class="token delimiter tag">}</span></span>"</span><span class="token punctuation">,</span>
+    skip_screenshots<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+    skip_metadata<span class="token punctuation">:</span> <span class="token keyword">true</span>
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>pilot</p>
+<pre class="line-numbers language-bash"><code class="language-bash">用于发布testflight内部测试，属于testflight action的别名
+
+常用参数:
+ipa ：要提交的包地址
+team_name、team_id ：如果有多个team 用于区分team
+skip_waiting_for_build_processing ： 在提交完成后的等待是否跳过，一般跳过
+changelog
+testflight<span class="token punctuation">(</span>
+  ipa <span class="token keyword">:</span> <span class="token string">'../xx.ipa'</span>
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>spaceship [<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.fastlane.tools%2Fbest-practices%2Fcontinuous-integration%2F%23two-step-or-two-factor-auth" target="_blank" rel="noopener">常见问题官方解释</a>]</p>
+<pre class="line-numbers language-undefined"><code class="language-undefined">spaceship其实一般fastfile中不会使用到，但是由于涉及到与ADC的通信，会出现一些奇奇怪怪的问题，所以对它也要有一点了解。
+
+当第一次使用fastlane安装的时候，会要求输入账号密码核实你的身份来连接ADC，这个时候你提供的登录验证会处理为会话存到 spaceship 的 cookie，会话大概一个月有效期，一个月后失效，通常我们只有在打包失败后才会发现这个问题。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>上面提到的这些action都是常用的，正常打包流程必不可少的部分，还有一些常用于辅助作用的Action</p>
+<ul>
+<li>resign ：重新签名</li>
+</ul>
+<pre class="line-numbers language-css"><code class="language-css">  fastlane sigh resign dev<span class="token number">.</span>ipa --signing_identity <span class="token string">"证书ID"</span> -p “dev<span class="token number">.</span>mobileprovision"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><p>get_info_plist_value ：获取info.plist中得某个key的值</p>
+</li>
+<li><p>set_info_plist_value ：设置info.plist中得某个key的值</p>
+</li>
+<li><p>increment_build_number ：自动递增项目build号</p>
+</li>
+<li><p>increment_version_number ：自动递增项目版本号</p>
+</li>
+<li><p>get_version_number： 获取版本号（新fastlane版本不能再添加scheme参数，只需要target即可）</p>
+</li>
+</ul>
+<p>以上两个都需要先配置好xcode, <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdeveloper.apple.com%2Flibrary%2Fcontent%2Fqa%2Fqa1827%2F_index.html" target="_blank" rel="noopener">配置文档</a></p>
+<h3 id="自定义Action"><a href="#自定义Action" class="headerlink" title="自定义Action"></a>自定义Action</h3><p>由于开发需求各自不同，已有的action不满足的情况下，Fastlane支持定义自己的Action。Fastlane为我们提供了现成的模板，即使你对Ruby的语法不熟悉，也没有关系，Fastlane是开源的嘛，可以直接下载源码看看别人的Action是怎么写的就知道了，我们可以在这个目录下找到所有的Action文件：</p>
+<p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Ffastlane%2Ffastlane%2Ftree%2Fmaster%2Ffastlane%2Flib%2Ffastlane%2Factions" target="_blank" rel="noopener">Action_rbs</a></p>
+<p>假设，我们针对pod的执行创建一个action来针对下面三种情况的执行</p>
+<pre class="line-numbers language-undefined"><code class="language-undefined">pod install --no-repo-update (避免master repo的每次更新耗时)
+pod update --no-repo-update (避免master repo的每次更新耗时)
+pod repo update XXX (私有repo的更新)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>自定义Action的流程大约如下，首先，我们在终端中执行命令：</p>
+<pre class="line-numbers language-undefined"><code class="language-undefined">fastlane new_action<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后根据提示，在命令行中敲入action的名字pod，然后Fastlane会在当前目录的actions文件夹中帮我们创建了一个pod.rb的Ruby文件 （此处只有部分代码）</p>
+<pre class="line-numbers language-ruby"><code class="language-ruby"><span class="token keyword">module</span> <span class="token constant">Fastlane</span>
+  <span class="token keyword">module</span> <span class="token constant">Actions</span>
+    <span class="token keyword">module</span> <span class="token constant">SharedValues</span>
+      <span class="token constant">POD_CUSTOM_VALUE</span> <span class="token operator">=</span> <span class="token symbol">:POD_CUSTOM_VALUE</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">class</span> <span class="token class-name">PodAction</span> <span class="token operator">&lt;</span> <span class="token constant">Action</span>
+      <span class="token keyword">def</span> <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+        <span class="token constant">UI</span><span class="token punctuation">.</span>message <span class="token string">"Parameter API Token: <span class="token interpolation"><span class="token delimiter tag">#{</span>params<span class="token punctuation">[</span><span class="token punctuation">:</span>api_token<span class="token punctuation">]</span><span class="token delimiter tag">}</span></span>"</span>
+      <span class="token keyword">end</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+      <span class="token keyword">def</span> <span class="token keyword">self</span><span class="token punctuation">.</span>available_options
+        <span class="token comment" spellcheck="true"># Define all options your action supports. </span>
+      <span class="token keyword">end</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到，自定义的Action都是隶属于Fastlane/Actions这个module，并且继承自Action这个父类。虽然模板中的内容还挺多，不过不用担心，大部分内容都是一些简单的文本描述，对于我们来说只需要重点关注这两个方法就行：</p>
+<ol>
+<li>self.run方法：这里放置的是实际的业务处理代码。</li>
+<li>self.available_options方法：这里声明需要对外暴露出的参数，没有声明的参数在执行过程中无法使用。</li>
+</ol>
+<p>最终写完结果如下：</p>
+<pre class="line-numbers language-ruby"><code class="language-ruby"><span class="token keyword">module</span> <span class="token constant">Fastlane</span>
+  <span class="token keyword">module</span> <span class="token constant">Actions</span>
+    <span class="token keyword">module</span> <span class="token constant">SharedValues</span>
+      <span class="token constant">POD_INSTALL_CUSTOM_VALUE</span> <span class="token operator">=</span> <span class="token symbol">:POD_INSTALL_CUSTOM_VALUE</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">class</span> <span class="token class-name">PodInstallAction</span> <span class="token operator">&lt;</span> <span class="token constant">Action</span>
+      <span class="token keyword">def</span> <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+        repo <span class="token operator">=</span> <span class="token string">"-no-repo-update"</span>
+        command <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        command <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token string">"pod install"</span>
+        <span class="token keyword">if</span> params<span class="token punctuation">[</span><span class="token symbol">:repo_update</span><span class="token punctuation">]</span>
+          repo <span class="token operator">=</span> <span class="token string">"--repo-update"</span>
+        <span class="token keyword">end</span>
+        command <span class="token operator">&lt;</span><span class="token operator">&lt;</span> repo
+        <span class="token keyword">if</span> params<span class="token punctuation">[</span><span class="token symbol">:verbose</span><span class="token punctuation">]</span>
+          command <span class="token operator">&lt;</span><span class="token operator">&lt;</span> <span class="token string">"--verbose"</span>
+        <span class="token keyword">end</span>
+        result <span class="token operator">=</span> <span class="token constant">Actions</span><span class="token punctuation">.</span><span class="token function">sh</span><span class="token punctuation">(</span>command<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token constant">UI</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>command<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" Successfully "</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> result
+      <span class="token keyword">end</span>
+
+      <span class="token keyword">def</span> <span class="token keyword">self</span><span class="token punctuation">.</span>description
+        <span class="token string">"pod install action"</span>
+      <span class="token keyword">end</span>
+      <span class="token keyword">def</span> <span class="token keyword">self</span><span class="token punctuation">.</span>details
+        <span class="token string">"verbose / repo-update"</span>
+      <span class="token keyword">end</span>
+      <span class="token keyword">def</span> <span class="token keyword">self</span><span class="token punctuation">.</span>available_options
+        <span class="token punctuation">[</span>
+        <span class="token constant">FastlaneCore</span><span class="token punctuation">:</span><span class="token symbol">:ConfigItem</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> <span class="token symbol">:verbose</span><span class="token punctuation">,</span>
+                                       description<span class="token punctuation">:</span> <span class="token string">"Allow output detail in console"</span><span class="token punctuation">,</span>
+                                       optional<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+                                       is_string<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+                                       default_value<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token constant">FastlaneCore</span><span class="token punctuation">:</span><span class="token symbol">:ConfigItem</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> <span class="token symbol">:repo_update</span><span class="token punctuation">,</span>
+                                       description<span class="token punctuation">:</span> <span class="token string">"Allow output detail in console"</span><span class="token punctuation">,</span>
+                                       optional<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+                                       is_string<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+                                       default_value<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span>
+      <span class="token keyword">end</span>
+      <span class="token keyword">def</span> <span class="token keyword">self</span><span class="token punctuation">.</span>output
+      <span class="token keyword">end</span>
+      <span class="token keyword">def</span> <span class="token keyword">self</span><span class="token punctuation">.</span>return_value
+      <span class="token keyword">end</span>
+      <span class="token keyword">def</span> <span class="token keyword">self</span><span class="token punctuation">.</span>authors
+        <span class="token punctuation">[</span><span class="token string">"yang"</span><span class="token punctuation">]</span>
+      <span class="token keyword">end</span>
+      <span class="token keyword">def</span> <span class="token keyword">self</span><span class="token punctuation">.</span>is_supported<span class="token operator">?</span><span class="token punctuation">(</span>platform<span class="token punctuation">)</span>
+        platform <span class="token operator">==</span> <span class="token symbol">:ios</span>
+      <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Action引用机制"><a href="#Action引用机制" class="headerlink" title="Action引用机制"></a>Action引用机制</h4><p>远程引用</p>
+<pre class="line-numbers language-ruby"><code class="language-ruby"><span class="token comment" spellcheck="true"># 远程Git引用：</span>
+<span class="token function">import_from_git</span><span class="token punctuation">(</span>url<span class="token punctuation">:</span> <span class="token string">'https://github.com/xilankong/ruby'</span><span class="token punctuation">,</span> branch<span class="token punctuation">:</span> <span class="token string">'master'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 复写发布项目的lane</span>
+lane <span class="token symbol">:do_deliver_app</span> <span class="token keyword">do</span> <span class="token operator">|</span>options<span class="token operator">|</span>
+  <span class="token comment" spellcheck="true"># ...</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>本地引用</p>
+<pre class="line-numbers language-ruby"><code class="language-ruby">import <span class="token string">"../GeneralFastfile"</span>
+actions_path <span class="token string">'../custom_actions_folder/'</span>
+lane <span class="token symbol">:appstore</span> <span class="token keyword">do</span> <span class="token operator">|</span>options<span class="token operator">|</span>
+  <span class="token comment" spellcheck="true"># ...</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h3><p>我们在使用Fastlane的时候常常会遇到这样的场景：</p>
+<ol>
+<li>我的自定义Action需要在多个内部项目中使用</li>
+<li>我觉得这个自定义Action很不错，想共享给其他的团队使用</li>
+</ol>
+<p>此时，拷贝粘贴虽然可以解决问题，但并不是一个聪明的方案。将Action发布到Fastlane的官方仓库倒是一个不错的选择，但是官方仓库本身对Action的要求比较高，并不会接收非通用性的Action，即使接收了，整个发布周期也会比较长，而且以后无论是升级还是Bug修复，都依赖Fastlane本身的发版，大大降低了灵活性。</p>
+<p>所以从1.93开始，Fastlane提供了一种Plugin的机制来解决这种问题。大家可以理解为：Plugin就是在Action的基础上做了一层包装，这个包装巧妙的利用了RubyGems这个相当成熟的Ruby库管理系统，所以其可以独立于Fastlane主仓库进行查找，安装，发布和删除。</p>
+<p>我们甚至可以简单的认为：Plugin就是RubyGem封装的Action，我们可以像管理RubyGems一样来管理Fastlane的Plugin。</p>
+<p>但是，如果为了多项目共享任务，或者共享fastfile，可以通过Action的远程引用机制。所以Plugin不过多介绍。</p>
+<h3 id="持续化打包还需要的Action"><a href="#持续化打包还需要的Action" class="headerlink" title="持续化打包还需要的Action"></a>持续化打包还需要的Action</h3><p>1.monkey</p>
+<p>2.ftp 提交远程服务器 （已解决）</p>
+<p>3.测试日志解析</p>
+<p>4.jira提交bug</p>
+<p>5.自动打framework （已解决）</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h4 id="1、gem源问题"><a href="#1、gem源问题" class="headerlink" title="1、gem源问题"></a>1、gem源问题</h4><p>gem ruby源已更新为 <strong><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgems.ruby-china.com" target="_blank" rel="noopener">https://gems.ruby-china.com</a></strong>，本机版本2.7.7</p>
+<pre class="line-numbers language-csharp"><code class="language-csharp">$ gem sources <span class="token operator">--</span><span class="token keyword">add</span> https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>gems<span class="token punctuation">.</span>ruby<span class="token operator">-</span>china<span class="token punctuation">.</span>com<span class="token operator">/</span> <span class="token operator">--</span><span class="token keyword">remove</span> https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>rubygems<span class="token punctuation">.</span>org<span class="token operator">/</span>
+$ gem sources <span class="token operator">-</span>l
+https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>gems<span class="token punctuation">.</span>ruby<span class="token operator">-</span>china<span class="token punctuation">.</span>com
+<span class="token preprocessor property"># 确保只有 gems.ruby-china.com</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2、ruby版本必须高于2-0，测试本机2-0也无效，所以最好2-0"><a href="#2、ruby版本必须高于2-0，测试本机2-0也无效，所以最好2-0" class="headerlink" title="2、ruby版本必须高于2.0，测试本机2.0也无效，所以最好2.0+"></a>2、ruby版本必须高于2.0，测试本机2.0也无效，所以最好2.0+</h4><p>以下是之前2.3.1正常安装的时候的操作：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">rvm安装 
+curl -L get.rvm.io <span class="token operator">|</span> <span class="token function">bash</span> -s stable  
+安装成功后、启用rvm
+<span class="token function">source</span> ~/.bashrc  
+<span class="token function">source</span> ~/.bash_profile  
+测试安装结果
+rvm -v
+升级ruby
+rvm <span class="token function">install</span> 2.3.1
+查看安装的所有ruby
+rvm list
+切换ruby
+rvm use 2.3.1 
+设置rvm默认版本
+rvm --default 2.3.1
+
+fastlane 安装：
+<span class="token function">sudo</span> gem <span class="token function">install</span> -n /usr/local/bin fastlane<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在10.13上安装ruby 2.4.0的时候出现一个问题，由于ssl3的无问题，ruby镜像一直无法下载</p>
+<pre class="line-numbers language-ruby"><code class="language-ruby"><span class="token constant">No</span> binary rubies available <span class="token keyword">for</span><span class="token punctuation">:</span> osx<span class="token operator">/</span><span class="token number">10.13</span><span class="token operator">/</span>x86_64<span class="token operator">/</span>ruby<span class="token number">-2.4</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token punctuation">.</span>
+ruby curl<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">35</span><span class="token punctuation">)</span> error<span class="token punctuation">:</span><span class="token number">14077410</span><span class="token symbol">:SSL</span> routines<span class="token symbol">:SSL23_GET_SERVER_HELLO</span><span class="token symbol">:sslv3</span> alert handshake failure<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>初步怀疑ssl问题，但具体解决方案没找到</p>
+<p>选择离线安装的办法</p>
+<p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fruby-china.org%2Ftopics%2F35193" target="_blank" rel="noopener">离线安装Ruby</a></p>
+<h4 id="3、Jenkins-环境-RVM未激活问题"><a href="#3、Jenkins-环境-RVM未激活问题" class="headerlink" title="3、Jenkins 环境 RVM未激活问题"></a>3、Jenkins 环境 RVM未激活问题</h4><p>比如Mac自带的Ruby版本不符合你的需求，一般会使用RVM重新装一个Ruby版本，但是这样导致<br>Jenkins中获取不到在目标服务器安装的最新RVM 和 ruby、fastlane、cocoapods等</p>
+<p>解决方案 :</p>
+<p><del>/.bashrc 、</del>/.zshrc 、~/.zlogin 内容</p>
+<pre class="line-numbers language-bash"><code class="language-bash">PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$HOME</span>/.rvm/bin
+<span class="token punctuation">[</span><span class="token punctuation">[</span> -s <span class="token string">"<span class="token variable">$HOME</span>/.rvm/scripts/rvm"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">source</span> <span class="token string">"<span class="token variable">$HOME</span>/.rvm/scripts/rvm"</span> <span class="token comment" spellcheck="true"># Load RVM </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在jenkins执行脚本内 启用RVM：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> <span class="token variable">$HOME</span>/.rvm/scripts/rvm
+或者 <span class="token function">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>解决办法二：</p>
+<p>新版本的Jenkins可以安装 RVM 插件，具体可以百度，然后配置里填写上你打包机当前用户配置的RVM版本即可</p>
+<h4 id="4、关于开启两步验证如何全自动化问题"><a href="#4、关于开启两步验证如何全自动化问题" class="headerlink" title="4、关于开启两步验证如何全自动化问题"></a>4、关于开启两步验证如何全自动化问题</h4><p>开启两步验证后，提交testfilght或者appstore会出现如下提示，要求手动确认并 输入6位code</p>
+<pre class="line-numbers language-rust"><code class="language-rust">Two Factor Authentication <span class="token keyword">for</span> account <span class="token string">'xxxxx@xx.com'</span> is enabled
+If you're running this <span class="token keyword">in</span> a non<span class="token operator">-</span>interactive <span class="token function">session</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>g<span class="token punctuation">.</span> server or CI<span class="token punctuation">)</span>
+check out https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>fastlane<span class="token operator">/</span>fastlane<span class="token operator">/</span>tree<span class="token operator">/</span>master<span class="token operator">/</span>spaceship#<span class="token number">2</span><span class="token operator">-</span>step<span class="token operator">-</span>verification
+Please enter the <span class="token number">6</span> digit code<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样明显影响全自动化提交操作。</p>
+<p>解决方案：</p>
+<p>fastlane提供的两步验证解决方案：</p>
+<pre class="line-numbers language-dart"><code class="language-dart"><span class="token number">1</span><span class="token punctuation">.</span>访问 https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>appleid<span class="token punctuation">.</span>apple<span class="token punctuation">.</span>com<span class="token operator">/</span>account<span class="token operator">/</span>manage 
+<span class="token number">2</span><span class="token punctuation">.</span>生成一个 APP<span class="token operator">-</span>SPECIFIC PASSWORDS，保留生成的特殊密码
+<span class="token number">3</span><span class="token punctuation">.</span>使用环境变量提供这个密码给fastlane：  FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD
+<span class="token number">4</span><span class="token punctuation">.</span>执行fastlane spaceauth <span class="token operator">-</span>u user<span class="token metadata symbol">@email</span><span class="token punctuation">.</span>com，生成session cookie。
+<span class="token number">5</span><span class="token punctuation">.</span>通过环境变量FASTLANE_SESSION 提供session cookies。
+
+配置地方：
+
+打包机：<span class="token operator">~/</span><span class="token punctuation">.</span>bash_profile 中，配置 FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD 和 FASTLANE_SESSION
+
+例如：
+<span class="token keyword">export</span> FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD<span class="token operator">=</span>特殊密码
+<span class="token keyword">export</span> FASTLANE_SESSION<span class="token operator">=</span>session cookie
+
+本机使用的是Item2 <span class="token operator">/</span>bin<span class="token operator">/</span>zsh 所以配置在 <span class="token operator">~/</span><span class="token punctuation">.</span>bash_profile
+Jenkins：配置对应环境变量即可
+
+还有一个小伙伴告知另一个配置方式
+ENV<span class="token punctuation">[</span><span class="token string">"FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"xxxxxx"</span>
+这个和环境变量配置是一个意思，但是涉及密码写在配置文件里面
+
+但是，本文测试一个月后发现依然失效，最后选择的方案是开设一个未开启两步验证的账号作为开发账号的子账号专门用来打包。
+如有不过期方式，欢迎补充<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6、fastlane-gym-produces-error-method-to-plist’-not-defined-in-Array-11503"><a href="#6、fastlane-gym-produces-error-method-to-plist’-not-defined-in-Array-11503" class="headerlink" title="6、fastlane gym produces error: method `to_plist’ not defined in Array #11503"></a>6、fastlane gym produces error: method `to_plist’ not defined in Array #11503</h4><pre class="line-numbers language-ruby"><code class="language-ruby">在执行gym的时候出现如上问题，或者跑fastlane action gym的时候出现
+
+解决办法：终端命令
+rvm <span class="token variable">@global</span> <span class="token keyword">do</span> gem uninstall fastlane 
+rvm all <span class="token keyword">do</span> gem uninstall fastlane
+gem uninstall fastlane
+gem install fastlane
+sudo gem install <span class="token function">fastlane</span>  <span class="token punctuation">(</span>jenkins权限问题<span class="token punctuation">)</span>
+
+例子：
+rvm <span class="token variable">@global</span> <span class="token keyword">do</span> gem uninstall fastlane
+
+<span class="token constant">Select</span> gem to uninstall<span class="token punctuation">:</span>
+ <span class="token number">1</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.47</span><span class="token punctuation">.</span><span class="token number">0</span>
+ <span class="token number">2</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.49</span><span class="token punctuation">.</span><span class="token number">0</span>
+ <span class="token number">3</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.51</span><span class="token punctuation">.</span><span class="token number">0</span>
+ <span class="token number">4</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.53</span><span class="token punctuation">.</span><span class="token number">1</span>
+ <span class="token number">5</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.55</span><span class="token punctuation">.</span><span class="token number">0</span>
+ <span class="token number">6</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.57</span><span class="token punctuation">.</span><span class="token number">2</span>
+ <span class="token number">7</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.58</span><span class="token punctuation">.</span><span class="token number">0</span>
+ <span class="token number">8</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.62</span><span class="token punctuation">.</span><span class="token number">1</span>
+ <span class="token number">9</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.85</span><span class="token punctuation">.</span><span class="token number">0</span>
+ <span class="token number">10</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.86</span><span class="token punctuation">.</span><span class="token number">2</span>
+ <span class="token number">11</span><span class="token punctuation">.</span> <span class="token constant">All</span> versions
+<span class="token operator">></span> <span class="token number">11</span>
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.47</span><span class="token punctuation">.</span><span class="token number">0</span>
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.49</span><span class="token punctuation">.</span><span class="token number">0</span>
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.51</span><span class="token punctuation">.</span><span class="token number">0</span>
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.53</span><span class="token punctuation">.</span><span class="token number">1</span>
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.55</span><span class="token punctuation">.</span><span class="token number">0</span>
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.57</span><span class="token punctuation">.</span><span class="token number">2</span>
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.58</span><span class="token punctuation">.</span><span class="token number">0</span>
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.62</span><span class="token punctuation">.</span><span class="token number">1</span>
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.85</span><span class="token punctuation">.</span><span class="token number">0</span>
+<span class="token constant">Remove</span> executables<span class="token punctuation">:</span>
+    bin<span class="token operator">-</span>proxy<span class="token punctuation">,</span> fastlane
+
+<span class="token keyword">in</span> addition to the gem<span class="token operator">?</span> <span class="token punctuation">[</span><span class="token constant">Yn</span><span class="token punctuation">]</span>  y
+<span class="token constant">Removing</span> bin<span class="token operator">-</span>proxy
+<span class="token constant">Removing</span> fastlane
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.86</span><span class="token punctuation">.</span><span class="token number">2</span>
+<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">:</span><span class="token number">42</span><span class="token punctuation">:</span><span class="token number">40</span><span class="token punctuation">]</span> young<span class="token punctuation">:</span><span class="token operator">~</span> $ rvm all <span class="token keyword">do</span> gem uninstall fastlane
+
+<span class="token constant">Select</span> gem to uninstall<span class="token punctuation">:</span>
+ <span class="token number">1</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.80</span><span class="token punctuation">.</span><span class="token number">0</span>
+ <span class="token number">2</span><span class="token punctuation">.</span> fastlane<span class="token number">-2.85</span><span class="token punctuation">.</span><span class="token number">0</span>
+ <span class="token number">3</span><span class="token punctuation">.</span> <span class="token constant">All</span> versions
+<span class="token operator">></span> <span class="token number">3</span>
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.80</span><span class="token punctuation">.</span><span class="token number">0</span>
+<span class="token constant">Remove</span> executables<span class="token punctuation">:</span>
+    bin<span class="token operator">-</span>proxy<span class="token punctuation">,</span> fastlane
+
+<span class="token keyword">in</span> addition to the gem<span class="token operator">?</span> <span class="token punctuation">[</span><span class="token constant">Yn</span><span class="token punctuation">]</span>  y
+<span class="token constant">Removing</span> bin<span class="token operator">-</span>proxy
+<span class="token constant">Removing</span> fastlane
+<span class="token constant">Successfully</span> uninstalled fastlane<span class="token number">-2.85</span><span class="token punctuation">.</span><span class="token number">0</span>
+<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">:</span><span class="token number">42</span><span class="token punctuation">:</span><span class="token number">55</span><span class="token punctuation">]</span> young<span class="token punctuation">:</span><span class="token operator">~</span> $ gem uninstall fastlane
+<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">:</span><span class="token number">43</span><span class="token punctuation">:</span><span class="token number">01</span><span class="token punctuation">]</span> young<span class="token punctuation">:</span><span class="token operator">~</span> $ gem install fastlane
+<span class="token constant">Fetching</span><span class="token punctuation">:</span> fastlane<span class="token number">-2.86</span><span class="token punctuation">.</span><span class="token number">2</span><span class="token punctuation">.</span><span class="token function">gem</span> <span class="token punctuation">(</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">)</span>
+<span class="token constant">Successfully</span> installed fastlane<span class="token number">-2.86</span><span class="token punctuation">.</span><span class="token number">2</span>
+<span class="token constant">Parsing</span> documentation <span class="token keyword">for</span> fastlane<span class="token number">-2.86</span><span class="token punctuation">.</span><span class="token number">2</span>
+<span class="token constant">Installing</span> ri documentation <span class="token keyword">for</span> fastlane<span class="token number">-2.86</span><span class="token punctuation">.</span><span class="token number">2</span>
+<span class="token constant">Done</span> installing documentation <span class="token keyword">for</span> fastlane after <span class="token number">23</span> seconds
+<span class="token number">1</span> gem installed<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="7、附录一份简单的fastfile文件，涉及到私密数据部分地方会符号代替-与fastlane无关的部分会删除，本文用的是Jenkins-fastlane-apphost-，以下提供部分fastfile文件、Jenkins-shell、本地脚本fastlane-sh"><a href="#7、附录一份简单的fastfile文件，涉及到私密数据部分地方会符号代替-与fastlane无关的部分会删除，本文用的是Jenkins-fastlane-apphost-，以下提供部分fastfile文件、Jenkins-shell、本地脚本fastlane-sh" class="headerlink" title="7、附录一份简单的fastfile文件，涉及到私密数据部分地方会符号代替, 与fastlane无关的部分会删除，本文用的是Jenkins + fastlane + apphost ，以下提供部分fastfile文件、Jenkins shell、本地脚本fastlane.sh"></a>7、附录一份简单的fastfile文件，涉及到私密数据部分地方会符号代替, 与fastlane无关的部分会删除，本文用的是Jenkins + fastlane + apphost ，以下提供部分fastfile文件、Jenkins shell、本地脚本fastlane.sh</h4><p>fastfile 部分</p>
+<pre class="line-numbers language-ruby"><code class="language-ruby"><span class="token comment" spellcheck="true">#声明</span>
+
+<span class="token constant">APP_NAME</span> <span class="token operator">=</span> “<span class="token constant">XXX</span>”
+<span class="token constant">WORKSPACE</span> <span class="token operator">=</span> “<span class="token constant">XXX</span><span class="token punctuation">.</span>xcworkspace"
+<span class="token constant">SCHEME</span> <span class="token operator">=</span> “<span class="token constant">XXX</span>”
+<span class="token constant">IPA_TIME</span> <span class="token operator">=</span> <span class="token builtin">Time</span><span class="token punctuation">.</span>now<span class="token punctuation">.</span><span class="token function">strftime</span><span class="token punctuation">(</span><span class="token string">"%Y%m%d_%H%M"</span><span class="token punctuation">)</span>
+<span class="token constant">OUTPUT_DIRECTORY</span> <span class="token operator">=</span> <span class="token string">"packages"</span>
+<span class="token constant">APP_INFO_PLIST_PATH</span> <span class="token operator">=</span> ‘<span class="token punctuation">.</span><span class="token operator">/</span><span class="token constant">XXX</span><span class="token operator">/</span><span class="token constant">Info</span><span class="token punctuation">.</span>plist'
+<span class="token constant">ENV_PREFIX</span><span class="token operator">=</span><span class="token string">""</span>
+<span class="token constant">IPA_NAME</span> <span class="token operator">=</span> <span class="token string">""</span>
+
+platform <span class="token symbol">:ios</span> <span class="token keyword">do</span>
+  <span class="token comment" spellcheck="true">#</span>
+  before_all <span class="token keyword">do</span>
+       xcode_select <span class="token string">"/Applications/Xcode.app"</span>
+       <span class="token constant">FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT</span> <span class="token operator">=</span> <span class="token string">"40"</span>
+  <span class="token keyword">end</span>
+
+  <span class="token comment" spellcheck="true">#debug包</span>
+  lane <span class="token symbol">:iosDebug</span> <span class="token keyword">do</span>
+    <span class="token constant">ENV_PREFIX</span><span class="token operator">=</span><span class="token string">"debug_"</span>
+    <span class="token constant">EXPORT_METHOD</span> <span class="token operator">=</span> <span class="token string">"development"</span>
+    <span class="token function">package</span><span class="token punctuation">(</span>configuration<span class="token punctuation">:</span> <span class="token string">"Debug"</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+
+  <span class="token comment" spellcheck="true">#release包</span>
+  lane <span class="token symbol">:iosRelease</span> <span class="token keyword">do</span>
+    <span class="token constant">ENV_PREFIX</span><span class="token operator">=</span><span class="token string">"adhoc_"</span>
+    <span class="token constant">EXPORT_METHOD</span> <span class="token operator">=</span> <span class="token string">"ad-hoc"</span>
+    <span class="token function">package</span><span class="token punctuation">(</span>configuration<span class="token punctuation">:</span> <span class="token string">"Release"</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+
+    <span class="token comment" spellcheck="true">#发布包</span>
+  lane <span class="token symbol">:iosAppStore</span> <span class="token keyword">do</span>
+    <span class="token constant">ENV_PREFIX</span><span class="token operator">=</span><span class="token string">"appstore_"</span>
+    <span class="token constant">EXPORT_METHOD</span> <span class="token operator">=</span> <span class="token string">"app-store"</span>
+    <span class="token function">package</span><span class="token punctuation">(</span>configuration<span class="token punctuation">:</span> <span class="token string">"Release"</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+
+  <span class="token comment" spellcheck="true">#打包函数</span>
+  lane <span class="token symbol">:package</span> <span class="token keyword">do</span> <span class="token operator">|</span>option<span class="token operator">|</span>
+      cocoapods
+      <span class="token constant">PLIST_INFO_VERSION</span> <span class="token operator">=</span> <span class="token function">get_version_number</span><span class="token punctuation">(</span>target<span class="token punctuation">:</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>SCHEME<span class="token delimiter tag">}</span></span>"</span><span class="token punctuation">)</span>
+      <span class="token constant">PLIST_BUILD_VERSION</span> <span class="token operator">=</span> <span class="token function">get_info_plist_value</span><span class="token punctuation">(</span>path<span class="token punctuation">:</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>APP_INFO_PLIST_PATH<span class="token delimiter tag">}</span></span>"</span><span class="token punctuation">,</span> key<span class="token punctuation">:</span> <span class="token string">'CFBundleVersion'</span><span class="token punctuation">)</span>
+      <span class="token constant">IPA_NAME</span> <span class="token operator">=</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>ENV_PREFIX<span class="token delimiter tag">}</span></span>"</span> <span class="token operator">+</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>APP_NAME<span class="token delimiter tag">}</span></span>_"</span>  <span class="token operator">+</span>  <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>IPA_TIME<span class="token delimiter tag">}</span></span>_"</span> <span class="token operator">+</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>PLIST_INFO_VERSION<span class="token delimiter tag">}</span></span>"</span> <span class="token operator">+</span><span class="token string">"_<span class="token interpolation"><span class="token delimiter tag">#{</span>PLIST_BUILD_VERSION<span class="token delimiter tag">}</span></span>"</span><span class="token operator">+</span> <span class="token string">".ipa"</span>
+
+     <span class="token comment" spellcheck="true">#打包</span>
+     <span class="token function">gym</span><span class="token punctuation">(</span>
+      scheme<span class="token punctuation">:</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>SCHEME<span class="token delimiter tag">}</span></span>"</span><span class="token punctuation">,</span>
+      export_method<span class="token punctuation">:</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>EXPORT_METHOD<span class="token delimiter tag">}</span></span>"</span><span class="token punctuation">,</span>
+      configuration<span class="token punctuation">:</span> option<span class="token punctuation">[</span><span class="token symbol">:configuration</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      output_directory<span class="token punctuation">:</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>OUTPUT_DIRECTORY<span class="token delimiter tag">}</span></span>"</span><span class="token punctuation">,</span>
+      include_symbols<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+      include_bitcode<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+      xcargs<span class="token punctuation">:</span> <span class="token string">'DEBUG_INFORMATION_FORMAT="dwarf-with-dsym"'</span><span class="token punctuation">,</span>
+      output_name<span class="token punctuation">:</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>IPA_NAME<span class="token delimiter tag">}</span></span>"</span><span class="token punctuation">,</span>
+      export_xcargs<span class="token punctuation">:</span> <span class="token string">"-allowProvisioningUpdates"</span>
+      <span class="token punctuation">)</span>
+      <span class="token function">xcclean</span><span class="token punctuation">(</span>
+       workspace<span class="token punctuation">:</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>WORKSPACE<span class="token delimiter tag">}</span></span>"</span><span class="token punctuation">,</span>
+       scheme<span class="token punctuation">:</span> <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>SCHEME<span class="token delimiter tag">}</span></span>"</span>
+      <span class="token punctuation">)</span>
+
+  <span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Jenkins部分脚本</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span> -l
+sh ./script/fastlane.sh <span class="token string">"Debug"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>fastlane.sh部分脚本</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#解决ArgumentError - invalid byte sequence in US-ASCII错误</span>
+<span class="token comment" spellcheck="true">#修改终端语言、地区等国际化环境变量</span>
+<span class="token function">export</span> LANG<span class="token operator">=</span>en_US.UTF-8
+<span class="token function">export</span> LANGUAGE<span class="token operator">=</span>en_US.UTF-8
+<span class="token function">export</span> LC_ALL<span class="token operator">=</span>en_US.UTF-8
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span>:/usr/local/bin
+<span class="token comment" spellcheck="true">#更换ruby环境，对应的修改有 打包机下面的  .bashrc  .zshrc .zlogin</span>
+<span class="token function">source</span> <span class="token variable">$HOME</span>/.rvm/scripts/rvm <span class="token comment" spellcheck="true">#source ~/.bashrc</span>
+
+<span class="token comment" spellcheck="true">#解锁keychain，是其它工具可以访问证书，解锁后设置keychain关闭时间为1小时, xxx为用户名</span>
+security -v unlock-keychain -p <span class="token string">"xxx"</span> <span class="token string">"/Users/xxx/Library/Keychains/login.keychain"</span>
+security set-keychain-settings -t 3600 -l <span class="token string">"/Users/xxx/Library/Keychains/login.keychain"</span>
+/usr/local/bin/pod update --verbose --no-repo-update
+
+<span class="token comment" spellcheck="true"># fastlane profile</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$1</span> <span class="token operator">==</span> <span class="token string">"Debug"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  fastlane iosDebug
+<span class="token keyword">elif</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$1</span> <span class="token operator">==</span> <span class="token string">"Release"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  fastlane iosRelease
+<span class="token keyword">elif</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$1</span> <span class="token operator">==</span> <span class="token string">"TestFlight"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  fastlane iosTestFlight
+<span class="token keyword">elif</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$1</span> <span class="token operator">==</span> <span class="token string">"AppStore"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  fastlane iosAppStore
+<span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+            </div>
+            <hr />
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">写作不易，客官能否打赏一杯普洱茶？</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.JPG" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.JPG" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《fastlane使用说明书》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/10/12/fastlane-shi-yong-shuo-ming-shu/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                胡
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/10/14/kuai-jie-zu-jian-zhi-yin/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="快捷组件指引">
+                        
+                        <span class="card-title">快捷组件指引</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            iOS之单独使用UISearchBar创建搜索框https://www.jianshu.com/p/dd6f0a0b1781
+1.实现代理UISearchBarDelegate
+@interface SearchViewController
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-14
+                        </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/10/12/shi-yong-jenkins-shi-xian-chi-xu-ji-cheng-ios/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="使用 Jenkins 实现持续集成 (iOS)">
+                        
+                        <span class="card-title">使用 Jenkins 实现持续集成 (iOS)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文将教会你：(MAC OS)
+利用 Jenkins 和 fastlane 实现 iOS 项目的自动构建
+自动打包 iOS 的 ipa 文件并自动上传到蒲公英
+
+注：本文的操作环境在 Mac OS 10.12 中进行。Jenkins 的版本
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-12
+                            </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: LJ的博客<br />'
+            + '作者: 胡<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyuNwMqd1';
+var conf = 'prod_86cc054b1d4e6c83b677e665954cbe6e';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://cy-cdn.kuaizhan.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2017-2020 lijieHu. 版权所有
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">35.8k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/wizhiai" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:lijieofhu@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://zhihu.com/people/gmain" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=630806244&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/waitclopeo" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 04, 21, 10, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>

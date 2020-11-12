@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wizhiai.github.io/"/>
-  <updated>2020-10-09T00:55:30.602Z</updated>
+  <updated>2020-11-12T06:50:13.050Z</updated>
   <id>https://wizhiai.github.io/</id>
   
   <author>
@@ -15,6 +15,98 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快捷组件指引</title>
+    <link href="https://wizhiai.github.io/2020/10/14/kuai-jie-zu-jian-zhi-yin/"/>
+    <id>https://wizhiai.github.io/2020/10/14/kuai-jie-zu-jian-zhi-yin/</id>
+    <published>2020-10-14T02:21:07.000Z</published>
+    <updated>2020-11-12T06:50:13.050Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;iOS之单独使用UISearchBar创建搜索框&quot;&gt;&lt;a href=&quot;#iOS之单独使用UISearchBar创建搜索框&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>fastlane使用说明书</title>
+    <link href="https://wizhiai.github.io/2020/10/12/fastlane-shi-yong-shuo-ming-shu/"/>
+    <id>https://wizhiai.github.io/2020/10/12/fastlane-shi-yong-shuo-ming-shu/</id>
+    <published>2020-10-12T09:45:04.000Z</published>
+    <updated>2020-10-13T05:14:56.304Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;2020-04-21-更新&quot;&gt;&lt;a href=&quot;#2020-04-21-更新&quot; class=&quot;headerlink&quot; title=&quot;2020-04-21 更新&quot;&gt;&lt;/a&gt;2020-04-21 更新&lt;/h3&gt;&lt;p&gt;大部分细节都类似，有一个绕过两步验证的更新一下，
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Jenkins 实现持续集成 (iOS)</title>
+    <link href="https://wizhiai.github.io/2020/10/12/shi-yong-jenkins-shi-xian-chi-xu-ji-cheng-ios/"/>
+    <id>https://wizhiai.github.io/2020/10/12/shi-yong-jenkins-shi-xian-chi-xu-ji-cheng-ios/</id>
+    <published>2020-10-12T01:48:53.000Z</published>
+    <updated>2020-11-05T12:38:18.814Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;本文将教会你：-MAC-OS&quot;&gt;&lt;a href=&quot;#本文将教会你：-MAC-OS&quot; class=&quot;headerlink&quot; title=&quot;本文将教会你：(MAC OS)&quot;&gt;&lt;/a&gt;本文将教会你：(MAC OS)&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;利用 Jenkins 和
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>华硕路由器搭建NAS，外网访问，家庭资料备份,片库</title>
+    <link href="https://wizhiai.github.io/2020/10/09/hua-shuo-lu-you-qi-da-jian-nas-wai-wang-fang-wen-jia-ting-zi-liao-bei-fen-pian-ku/"/>
+    <id>https://wizhiai.github.io/2020/10/09/hua-shuo-lu-you-qi-da-jian-nas-wai-wang-fang-wen-jia-ting-zi-liao-bei-fen-pian-ku/</id>
+    <published>2020-10-09T06:19:28.000Z</published>
+    <updated>2020-10-12T01:48:10.204Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近在布置新家，因为上下两层，路由器便搞了个梅林组合，想起之前一直想弄的nas，正好趁这次给组装好。当然，vpn也是必备的。&lt;/p&gt;
+&lt;p&gt;准备用硬盘盒，搭配机械硬盘，做存储，然后&lt;/p&gt;
+&lt;p&gt;硬盘柜-&amp;gt;主机-&amp;gt;网络&lt;/p&gt;
+&lt;p&gt;家里有台不用的macpro，
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>导出iOS的应用ipa包文件</title>
@@ -382,100 +474,6 @@
           &lt;p&gt;有的时候需要进入页面后，点击某个按钮改变界面，同时需要隐藏状态栏，这个时候就需要手动改变状态栏状态。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;一、有关状态栏的隐藏&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;1.1、方式一：提示：控制器之间的状态栏不会相互影响
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>view自旋转</title>
-    <link href="https://wizhiai.github.io/2020/09/28/view-zi-xuan-zhuan/"/>
-    <id>https://wizhiai.github.io/2020/09/28/view-zi-xuan-zhuan/</id>
-    <published>2020-09-28T05:52:09.000Z</published>
-    <updated>2020-09-28T05:52:22.930Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;- (&lt;strong&gt;void&lt;/strong&gt;)rotateView:𝑈𝐼𝐼𝑚𝑎𝑔𝑒𝑉𝑖𝑒𝑤∗UIImageView∗view`&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-CABasicAnimation
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>mac将app打包dmg文件</title>
-    <link href="https://wizhiai.github.io/2020/09/28/mac-jiang-app-da-bao-dmg-wen-jian/"/>
-    <id>https://wizhiai.github.io/2020/09/28/mac-jiang-app-da-bao-dmg-wen-jian/</id>
-    <published>2020-09-28T05:51:39.000Z</published>
-    <updated>2020-09-28T05:52:19.750Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;首先，得到要打包的app文件，在xcode的Products下，这里可以将xcode设置成release模式，build，再去products文件夹下找到.app文件&lt;/p&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>KVC里的valueforkeypath</title>
-    <link href="https://wizhiai.github.io/2020/09/28/kvc-li-de-valueforkeypath/"/>
-    <id>https://wizhiai.github.io/2020/09/28/kvc-li-de-valueforkeypath/</id>
-    <published>2020-09-28T05:51:06.000Z</published>
-    <updated>2020-09-28T05:51:52.247Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;一、KVC 的用法和实践&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;用法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;KVC（Key-value
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发JSONModel去除关键字冲突</title>
-    <link href="https://wizhiai.github.io/2020/09/28/ios-kai-fa-jsonmodel-qu-chu-guan-jian-zi-chong-tu/"/>
-    <id>https://wizhiai.github.io/2020/09/28/ios-kai-fa-jsonmodel-qu-chu-guan-jian-zi-chong-tu/</id>
-    <published>2020-09-28T05:50:24.000Z</published>
-    <updated>2020-09-28T05:50:54.542Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;情景模拟,如后台返回JSON数据，如（图一）:&lt;/p&gt;
-&lt;p&gt;&lt;img
         
       
     
