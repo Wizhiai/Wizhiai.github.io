@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wizhiai.github.io/"/>
-  <updated>2020-11-12T06:50:13.050Z</updated>
+  <updated>2020-11-12T06:58:16.659Z</updated>
   <id>https://wizhiai.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>QMUI-快捷代码片段指南.md</title>
+    <link href="https://wizhiai.github.io/2020/11/12/qmui-kuai-jie-dai-ma-pian-duan-zhi-nan-md/"/>
+    <id>https://wizhiai.github.io/2020/11/12/qmui-kuai-jie-dai-ma-pian-duan-zhi-nan-md/</id>
+    <published>2020-11-12T06:58:03.000Z</published>
+    <updated>2020-11-12T06:58:16.659Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;快捷键汇总&quot;&gt;&lt;a href=&quot;#快捷键汇总&quot; class=&quot;headerlink&quot; title=&quot;快捷键汇总&quot;&gt;&lt;/a&gt;快捷键汇总&lt;/h2&gt;&lt;p&gt;&lt;em&gt;NSObject&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pa&lt;/code&gt; - 定义一个
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>快捷组件指引</title>
@@ -450,30 +474,6 @@
         
           &lt;p&gt;可能会遇到libwebp v0.6.0 超时问题:&lt;/p&gt;
 &lt;pre class=&quot;line-numbers language-csharp&quot;&gt;&lt;code class=&quot;language-csharp&quot;&gt;&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>在页面内隐藏statusbar</title>
-    <link href="https://wizhiai.github.io/2020/09/28/zai-ye-mian-nei-yin-cang-statusbar/"/>
-    <id>https://wizhiai.github.io/2020/09/28/zai-ye-mian-nei-yin-cang-statusbar/</id>
-    <published>2020-09-28T05:52:36.000Z</published>
-    <updated>2020-09-28T05:52:57.464Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;有的时候需要进入页面后，点击某个按钮改变界面，同时需要隐藏状态栏，这个时候就需要手动改变状态栏状态。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;一、有关状态栏的隐藏&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1.1、方式一：提示：控制器之间的状态栏不会相互影响
         
       
     

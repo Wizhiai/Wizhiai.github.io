@@ -4,17 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="OC 字符串包含中文sha1加密算法, coding">
+    <meta name="keywords" content="QMUI-快捷代码片段指南.md, coding">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="-(NSString *)sha1
+    <meta name="description" content="快捷键汇总NSObject
 
-{
-
-  // see http://www.makebetterthings.com/iphone/how-to-get-md5-and-sha1-in-objective-c-ios-sdk/
-
- ">
+pa - 定义一个 assign 的 property
+par - 定义一个 assign, readonly 的 property
+pc - 定义一个 copy 的 property
+pcr - 定义一个 c">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>OC 字符串包含中文sha1加密算法 | LJ的博客</title>
+    <title>QMUI-快捷代码片段指南.md | LJ的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -335,13 +334,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        OC 字符串包含中文sha1加密算法
+                        QMUI-快捷代码片段指南.md
                     </div>
                 </div>
             </div>
@@ -463,7 +462,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-28
+                    2020-11-12
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -477,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    57
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
                 
@@ -500,37 +499,140 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>-(NSString *)sha1
+                <h2 id="快捷键汇总"><a href="#快捷键汇总" class="headerlink" title="快捷键汇总"></a>快捷键汇总</h2><p><em>NSObject</em></p>
+<ul>
+<li><code>pa</code> - 定义一个 <code>assign</code> 的 property</li>
+<li><code>par</code> - 定义一个 <code>assign, readonly</code> 的 property</li>
+<li><code>pc</code> - 定义一个 <code>copy</code> 的 property</li>
+<li><code>pcr</code> - 定义一个 <code>copy, readonly</code> 的 property</li>
+<li><code>ps</code> - 定义一个 <code>strong</code> 的property</li>
+<li><code>psr</code> - 定义一个 <code>strong, readonly</code> 的property</li>
+<li><code>pw</code> - 定义一个 <code>weak</code> 的property</li>
+<li><code>pwr</code> - 定义一个 <code>weak, readonly</code> 的property</li>
+<li><code>load_once</code> - 创建一个带 <code>dispatch_once</code> 的 <code>+load</code> 方法</li>
+<li><code>propertySwizzleAssign</code> - 用 <code>swizzle</code> 的方式定义一个 <code>assign</code> 的property</li>
+<li><code>propertySwizzleCopy</code> - 用 <code>swizzle</code> 的方式定义一个 <code>copy</code> 的property</li>
+<li><code>propertySwizzleStrong</code> - 用 <code>swizzle</code> 的方式定义一个 <code>strong</code> 的property</li>
+<li><code>propertySwizzleWeak</code> - 用 <code>swizzle</code> 的方式定义一个 <code>weak</code> 的property</li>
+<li><code>sharedInstance</code> - 为当前类创建一个实现单例功能的 <code>sharedInstance</code> 方法</li>
+<li><code>exchangeImplementation</code> - 重写当前类的 <code>load</code> 方法并在其中用 <code>swizzle</code> 替换方法实现</li>
+<li><code>exchangeImplementation_QMUI</code> - 用 QMUI 重写当前类的 <code>load</code> 方法并用 <code>ExchangeImplementations()</code> 函数替换方法的实现</li>
+<li><code>exchangeMultipleImplementations_QMUI</code> - 用 QMUI 重写当前类的 <code>load</code> 方法并用 <code>ExchangeImplementations()</code> 函数批量替换多个方法的实现</li>
+<li><code>override_void_non_argv</code> - 用 QMUI 的 <code>OverrideImplementation()</code> 重写指定 class 的某个无返回值、无参数的方法实现</li>
+<li><code>override_void_single_argv</code> - 用 QMUI 的 <code>OverrideImplementation()</code> 修改指定 class 的某个无返回值、带一个参数的方法实现</li>
+<li><code>override_void_two_argvs</code> - 用 QMUI 的 <code>OverrideImplementation()</code> 修改指定 class 的某个无返回值、带两个参数的方法实现</li>
+<li><code>override_return_non_argv</code> - 用 QMUI 的 <code>OverrideImplementation()</code> 修改指定 class 的某个带返回值、无参数的方法实现</li>
+<li><code>override_return_single_argv</code> - 用 QMUI 的 <code>OverrideImplementation()</code> 修改指定 class 的某个带返回值、带一个参数的方法实现</li>
+<li><code>override_return_two_argvs</code> - 用 QMUI 的 <code>OverrideImplementation()</code> 修改指定 class 的某个带返回值、带两个参数的方法实现</li>
+<li><code>extend_void_non_argv</code> - 用 QMUI 的 <code>ExtendImplementationOfVoidMethodWithoutArguments()</code> 修改指定 class 的某个无返回值、无参数的方法实现</li>
+<li><code>extend_void_single_argv</code> - 用 QMUI 的 <code>ExtendImplementationOfVoidMethodWithSingleArgument()</code> 修改指定 class 的某个无返回值、带一个参数的方法实现</li>
+<li><code>extend_void_two_argvs</code> - 用 QMUI 的 <code>ExtendImplementationOfVoidMethodWithTwoArguments()</code> 修改指定 class 的某个无返回值、带两个参数的方法实现</li>
+<li><code>extend_return_non_argv</code> - 用 QMUI 的 <code>ExtendImplementationOfNonVoidMethodWithoutArguments()</code> 修改指定 class 的某个带返回值、无参数的方法实现</li>
+<li><code>extend_return_single_argv</code> - 用 QMUI 的 <code>ExtendImplementationOfNonVoidMethodWithSingleArgument()</code>修改指定 class 的某个带返回值、带一个参数的方法实现</li>
+<li><code>extend_return_two_argvs</code> - 用 QMUI 的 <code>ExtendImplementationOfNonVoidMethodWithTwoArguments()</code> 修改指定 class 的某个带返回值、带两个参数的方法实现</li>
+</ul>
+<p><em>Block</em></p>
+<ul>
+<li><code>blockParameterInMethod</code> - 声明一个用于 OC 方法参数的 block</li>
+<li><code>blockParameterInFunction</code> - 声明一个用于 C 函数参数的 block</li>
+<li><code>blockproperty</code> - 声明一个用于 property 的 block</li>
+<li><code>blocktypedef</code> - 用 <code>typedef</code> 定义一个 block</li>
+<li><code>blockvar</code> - 定义一个作为局部变量的 block</li>
+</ul>
+<p><em>Method &amp; Function</em></p>
+<ul>
+<li><code>fnv</code> - 定义一个返回值为 <code>void</code> 的方法</li>
+<li><code>fnv:</code> - 定义一个返回值为 <code>void</code> 且带参数的方法</li>
+<li><code>fnblock</code> - 定义一个返回值类型为 block 的方法</li>
+<li><code>fnv_handleEvent</code> - 定义一个用于 <code>UIControl</code> 事件回调的方法</li>
+<li><code>fnv_longPress</code> - 定义一个用于 <code>UILongPressGestureRecognizer</code> 的回调方法（你就不用每次都去拼写那个很长的手势名字了）</li>
+<li><code>fnv_pan</code> - 定义一个用于 <code>UIPanGestureRecognizer</code> 的回调方法</li>
+<li><code>fnv_tap</code> - 定义一个用于 <code>UITapGestureRecognizer</code> 的回调方法</li>
+</ul>
+<p><em>UIView</em></p>
+<ul>
+<li><code>setFrame</code> - 为 <code>UIView</code> 设置 <code>frame</code></li>
+<li><code>setFrame_QMUI</code> - QMUI 使用像素对齐的 <code>CGRectFlatMake()</code> 为 <code>UIView</code> 设置 <code>frame</code></li>
+<li><code>setFrameX</code> - QMUI 使用 <code>CGRectSetX()</code> 修改 <code>UIView</code> 的 <code>frame.origin.x</code></li>
+<li><code>setFrameY</code> - QMUI 使用 <code>CGRectSetY()</code> 修改 <code>UIView</code> 的 <code>frame.origin.y</code></li>
+<li><code>setFrameXY</code> - QMUI 使用 <code>CGRectSetXY()</code> 修改 <code>UIView</code> 的 <code>frame.origin</code></li>
+<li><code>sizeThatFits</code> - 为当前 view 创建 <code>sizeThatFits:</code> 方法</li>
+<li><code>layoutSubviews</code> - 展开 <code>layoutSubviews</code> 方法</li>
+<li><code>updateConstraints</code> - 展开 <code>updateConstraints</code> 方法</li>
+<li><code>getWidth</code> - 展开 <code>CGRectGetWidth()</code></li>
+<li><code>getHeight</code> - 展开 <code>CGRectGetHeight()</code></li>
+<li><code>getMinX</code> - 展开 <code>CGRectGetMinX()</code></li>
+<li><code>getMinY</code> - 展开 <code>CGRectGetMinY()</code></li>
+<li><code>addtarget</code> - 调用 <code>UIControl addTarget:action:forEvents:</code> 方法</li>
+<li><code>setImageForButton</code> - 为 <code>UIButton</code> 设置图片</li>
+<li><code>setTitleColorForButton</code> - 为 <code>UIButton</code> 设置文字颜色</li>
+<li><code>setTitleForButton</code> - 为 <code>UIButton</code> 设置文字</li>
+</ul>
+<p><em>UITableView</em></p>
+<ul>
+<li><code>initWithStyle</code> - 展开 <code>initWithStyle:</code> 方法</li>
+<li><code>initWithStyleForCell</code> - 展开 <code>UITableViewCell initWithStyle:reuseIdentifier:</code> 方法</li>
+<li><code>tableViewDelegate</code> - 展开常用的几个 <code>UITableViewDelegate</code> 方法</li>
+<li><code>numberOfSectionsInTableView</code> - 展开 <code>numberOfSectionsInTableView:</code>方法</li>
+<li><code>numberOfRowsInSection</code> - 展开 <code>tableView:numberOfRowsInSection:</code> 方法</li>
+<li><code>cellForRowAtIndexPath</code> - 展开 <code>tableView:cellForRowAtIndexPath:</code> 方法</li>
+<li><code>heightForRowAtIndexPath</code> - 展开 <code>tableView:heightForRowAtIndexPath:</code> 方法</li>
+<li><code>didSelectRowAtIndexPath</code> - 展开 <code>tableView:didSelectRowAtIndexPath:</code> 方法</li>
+</ul>
+<p><em>UICollectionView</em></p>
+<ul>
+<li><code>collectionViewDelegate</code> - 展开常用的几个<code>UICollectionViewDelegate</code> 方法</li>
+<li><code>numberOfSectionsInCollectionView</code> - 展开 <code>numberOfSectionsInCollectionView:</code></li>
+<li><code>numberOfItemsInSection</code> - 展开 <code>collectionView:numberOfItemsInSection:</code></li>
+<li><code>cellForItemAtIndexPath</code> - 展开 <code>collectionView:cellForItemAtIndexPath:</code></li>
+<li><code>sizeForItemAtIndexPath</code> - 展开 <code>collectionView:layout:sizeForItemAtIndexPath:</code> 方法</li>
+<li><code>didSelectItemAtIndexPath</code> - 展开 <code>collectionView:didSelectItemAtIndexPath:</code> 方法</li>
+<li><code>didDeselectItemAtIndexPath</code> - 展开 <code>collectionView:didDeselectItemAtIndexPath:</code> 方法</li>
+</ul>
+<p><em>UIViewController</em></p>
+<ul>
+<li><code>initWithNib</code> - 展开 <code>initWithNibName:bundle:</code> 方法</li>
+<li><code>didInitialize</code> - 展开某些 QMUI 控件提供的 <code>didInitialize</code> 方法</li>
+<li><code>didInitializeWithStyle</code> - 展开 QMUICommonTableViewController 的 <code>didInitializeWithStyle:</code> 方法</li>
+<li><code>loadView</code> - 展开 <code>loadView</code> 方法</li>
+<li><code>viewDidLoad</code> - 展开 <code>viewDidLoad</code> 方法</li>
+<li><code>viewWillAppear</code> - 展开 <code>viewWillAppear:</code> 方法</li>
+<li><code>viewDidAppear</code> - 展开 <code>viewDidAppear:</code> 方法</li>
+<li><code>viewWillDisappear</code> - 展开 <code>viewWillDisappear:</code> 方法</li>
+<li><code>viewDidDisappear</code> - 展开 <code>viewDidDisappear:</code> 方法</li>
+<li><code>viewDidLayoutSubviews</code> - 展开 <code>viewDidLayoutSubviews:</code> 方法</li>
+<li><code>updateViewConstraints</code> - 展开 <code>updateViewConstraints:</code> 方法</li>
+<li><code>addChildViewController</code> - 在当前 <code>UIViewController</code> 里添加 <code>childViewController</code></li>
+<li><code>removeFromParentViewController</code> - 将 <code>childViewController</code> 从当前的 <code>UIViewController</code> 里移除</li>
+<li><code>initSubviews</code> - QMUI 展开 <code>initSubviews</code> 方法</li>
+<li><code>setupNavigationItems</code> - QMUI 重写 <code>QMUICommonViewController</code> 里的 <code>setupNavigationItems</code> 方法</li>
+<li><code>setupToolbarItems</code> - QMUI 重写 <code>QMUICommonViewController</code> 里的 <code>setupToolbarItems</code> 方法</li>
+</ul>
+<p><em>UIBarButtonItem</em></p>
+<ul>
+<li><code>backItem</code> - 用 QMUI 方法生成一个返回按钮</li>
+<li><code>boldTitleItem</code> - 用 QMUI 方法生成一个文字加粗的导航栏按钮</li>
+<li><code>closeItem</code> - 用 QMUI 方法生成一个导航栏上的关闭图标按钮</li>
+<li><code>imageItem</code> - 用 QMUI 方法生成一个导航栏上的图片按钮</li>
+<li><code>titleItem</code> - 用 QMUI 方法生成一个导航栏上的文字按钮</li>
+</ul>
+<p><em>Other</em></p>
+<ul>
+<li><code>pragma</code> - 展开一个用于 Xcode 导航的 <code>#pragma mark -</code> 宏</li>
+<li><code>log</code> - 展开 <code>NSLog(@&quot;xxx&quot;)</code></li>
+<li><code>osif</code> - 展开一个 @available(iOS xxx, *) 的 if 判断</li>
+<li><code>externRefInH</code> - 在 <code>*.h</code> 文件里声明一个 <code>extern const</code> 的指针</li>
+<li><code>externRefInM</code> - 在 <code>*.m</code> 文件里为一个 <code>extern const</code> 的指针赋值</li>
+<li><code>externValueInH</code> - 在 <code>*.h</code> 文件里声明一个 <code>extern const</code> 的值变量</li>
+<li><code>externValueInM</code> - 在 <code>*.m</code> 文件里为一个 <code>extern const</code> 的变量赋值</li>
+<li><code>static reference</code> - 定义一个 <code>static</code> 的指针</li>
+<li><code>static</code> - 定义一个 <code>static</code> 的值变量</li>
+<li><code>__weakSelf</code> - 定义一个 <code>weak</code> 的 <code>self</code> 指针</li>
+<li><code>__strongSelf</code> - 将 <code>weakSelf</code> 指针改为 <code>strong</code> 的 <code>self</code> 指针</li>
+<li><code>logCallStackSymbols</code> - 用 <code>NSLog</code> 打出当前的方法调用栈信息</li>
+<li><code>timeConsuming</code> - 展开一段用 <code>CACurrentMediaTime()</code> 来计算方法耗时的代码</li>
+</ul>
 
-{
-
-  // see http://www.makebetterthings.com/iphone/how-to-get-md5-and-sha1-in-objective-c-ios-sdk/
-
-  NSData *data = [**self** dataUsingEncoding:NSUTF8StringEncoding];
-
-  uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-
-
-
-  CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
-
-
-
-  NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-
-
-
-  **for** (**int** i = 0; i &lt; CC_SHA1_DIGEST_LENGTH; i++) {
-
-    [output appendFormat:@&quot;%02x&quot;, digest[i]];
-
-  }
-
-
-
-  **return** output;
-
-}</code></pre>
             </div>
             <hr />
 
@@ -688,9 +790,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《OC 字符串包含中文sha1加密算法》
+                    《QMUI-快捷代码片段指南.md》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/09/28/oc-zi-fu-chuan-bao-han-zhong-wen-sha1-jia-mi-suan-fa/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/11/12/qmui-kuai-jie-dai-ma-pian-duan-zhi-nan-md/" property="cc:attributionName"
                rel="cc:attributionURL">
                 胡
             </a> 采用
@@ -992,47 +1094,41 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/28/ios-kai-fa-jsonmodel-qu-chu-guan-jian-zi-chong-tu/">
+                <a href="/2020/11/12/qmui-kuai-jie-dai-ma-pian-duan-zhi-nan-md/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="iOS开发JSONModel去除关键字冲突">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="QMUI-快捷代码片段指南.md">
                         
-                        <span class="card-title">iOS开发JSONModel去除关键字冲突</span>
+                        <span class="card-title">QMUI-快捷代码片段指南.md</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            情景模拟,如后台返回JSON数据，如（图一）:
+                            快捷键汇总NSObject
 
-img
-图一
-创建一个用于接收数据的model类，如图:
-
-img
-订单order模型类.h
-
-img
-订单order模型类.m
-在相应的网络请求回调处，接收JSON数据，如图:
-
-5115
+pa - 定义一个 assign 的 property
+par - 定义一个 assign, readonly 的 property
+pc - 定义一个 copy 的 property
+pcr - 定义一个 c
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-11-12
+                            </span>
                         <span class="publish-author">
                             
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1043,28 +1139,26 @@ img
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/28/oc-dui-xiang-isa-he-superclass/">
+                <a href="/2020/10/14/kuai-jie-zu-jian-zhi-yin/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="OC对象，isa和superclass">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="快捷组件指引">
                         
-                        <span class="card-title">OC对象，isa和superclass</span>
+                        <span class="card-title">快捷组件指引</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            instance对象实例对象实例对象
-class对象类对象类对象
-meta-class对象元类对象元类对象
-一.instance对象
-概念： instance对象就是通过类alloc出来的对象，每次调用alloc 都会产生新的instanc
+                            iOS之单独使用UISearchBar创建搜索框https://www.jianshu.com/p/dd6f0a0b1781
+1.实现代理UISearchBarDelegate
+@interface SearchViewController
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-14
                             </span>
                         <span class="publish-author">
                             
