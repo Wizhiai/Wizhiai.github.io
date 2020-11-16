@@ -473,7 +473,7 @@ flutter create -t module flutter_modul">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    243
+                    416
                 </div>
                 
 
@@ -532,6 +532,28 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 <li><code>-d</code> 是应用的设备id</li>
 </ul>
 <p>可以直接执行 <code>flutter attach</code> 直接调试，但是如果有个多个应用或者设备需要指定对应的设备</p>
+<h1 id="接入Flutter-Boost"><a href="#接入Flutter-Boost" class="headerlink" title="接入Flutter Boost"></a>接入Flutter Boost</h1><h3 id="添加-Flutter-Boost-依赖"><a href="#添加-Flutter-Boost-依赖" class="headerlink" title="添加 Flutter Boost 依赖"></a>添加 Flutter Boost 依赖</h3><h3 id="1首先在-Flutter-Module-项目中加入-flutter-boost-依赖，即在-pubspec-yaml-文件中的-dev-dependencies-配置增加-flutter-boost-依赖："><a href="#1首先在-Flutter-Module-项目中加入-flutter-boost-依赖，即在-pubspec-yaml-文件中的-dev-dependencies-配置增加-flutter-boost-依赖：" class="headerlink" title="1首先在 Flutter Module 项目中加入 flutter-boost 依赖，即在 pubspec.yaml 文件中的 dev_dependencies 配置增加 flutter-boost 依赖："></a>1首先在 Flutter Module 项目中加入 flutter-boost 依赖，即在 pubspec.yaml 文件中的 dev_dependencies 配置增加 flutter-boost 依赖：</h3><pre class="line-numbers language-bash"><code class="language-bash">dev_dependencies:
+  flutter_boost:
+     git:
+        url: <span class="token string">'https://github.com/alibaba/flutter_boost.git'</span>
+        ref: <span class="token string">'1.12.13'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2返回iOS工程目录执行pod-install"><a href="#2返回iOS工程目录执行pod-install" class="headerlink" title="2返回iOS工程目录执行pod install"></a>2返回iOS工程目录执行pod install</h3><h3 id="3在AppDelegate-h"><a href="#3在AppDelegate-h" class="headerlink" title="3在AppDelegate.h"></a>3在AppDelegate.h</h3><p>#import &lt;Flutter/Flutter.h&gt;</p>
+<p><strong>@property</strong> (<strong>nonatomic</strong>,<strong>strong</strong>) FlutterEngine *flutterEngine;</p>
+<h3 id="4在AppDelegate-m"><a href="#4在AppDelegate-m" class="headerlink" title="4在AppDelegate.m"></a>4在AppDelegate.m</h3><p>didFinishLaunchingWithOptions方法里</p>
+<p> //Flutter 初始化引擎</p>
+<p>  <strong>self</strong>.flutterEngine = [[FlutterEngine alloc] initWithName:@”my flutter engine”];</p>
+<p>   [<strong>self</strong>.flutterEngine run];</p>
+<p>  PlatformRouterImp *router = [PlatformRouterImp new];</p>
+<p>  [FlutterBoostPlugin.sharedInstance startFlutterWithPlatform:router</p>
+<p>​                            onStart:^(FlutterEngine *engine) {</p>
+<p>​                               </p>
+<p>​                            }];</p>
+<p>5在需要的地方进行调用（可以在flutter页面自定义路由跳到指定页面）</p>
+<p>#import &lt;Flutter/Flutter.h&gt;</p>
+<p> FlutterViewController <em>flutterViewController = [[FlutterViewController alloc] initWithEngine:AppflutterEngine nibName:<strong>nil</strong> bundle:<em>*nil</em></em>];</p>
+<p>​    [flutterViewController setInitialRoute:@”route1”];</p>
+<p>//     [self presentViewController:flutterViewController animated:false completion:nil];</p>
+<p>​    [<strong>self</strong>.rt_navigationController pushViewController:flutterViewController animated:<strong>YES</strong>];</p>
 
             </div>
             <hr />
@@ -1244,7 +1266,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">37.4k</span>
+            <span class="white-color">37.6k</span>
             
 
             <br>
