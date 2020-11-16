@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wizhiai.github.io/"/>
-  <updated>2020-11-12T06:58:16.659Z</updated>
+  <updated>2020-11-16T05:13:48.500Z</updated>
   <id>https://wizhiai.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Flutter接入已有项目</title>
+    <link href="https://wizhiai.github.io/2020/11/16/flutter-jie-ru-yi-you-xiang-mu/"/>
+    <id>https://wizhiai.github.io/2020/11/16/flutter-jie-ru-yi-you-xiang-mu/</id>
+    <published>2020-11-16T03:03:26.000Z</published>
+    <updated>2020-11-16T05:13:48.500Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-创建Flutter模块&quot;&gt;&lt;a href=&quot;#1-创建Flutter模块&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>QMUI-快捷代码片段指南.md</title>
     <link href="https://wizhiai.github.io/2020/11/12/qmui-kuai-jie-dai-ma-pian-duan-zhi-nan-md/"/>
     <id>https://wizhiai.github.io/2020/11/12/qmui-kuai-jie-dai-ma-pian-duan-zhi-nan-md/</id>
     <published>2020-11-12T06:58:03.000Z</published>
-    <updated>2020-11-12T06:58:16.659Z</updated>
+    <updated>2020-11-12T07:01:08.664Z</updated>
     
     <summary type="html">
     
@@ -451,29 +473,6 @@
 &lt;p&gt;2：证书目录要用绝对的项目路径，建议使用__dirname;&lt;/p&gt;
 &lt;p&gt;代码如下：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;`const&lt;/strong&gt;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>iOS使用cocoapods 安装libwebp 0.6.0遇到Error installing libwebp</title>
-    <link href="https://wizhiai.github.io/2020/09/28/ios-shi-yong-cocoapods-an-zhuang-libwebp-0-6-0-yu-dao-error-installing-libwebp/"/>
-    <id>https://wizhiai.github.io/2020/09/28/ios-shi-yong-cocoapods-an-zhuang-libwebp-0-6-0-yu-dao-error-installing-libwebp/</id>
-    <published>2020-09-28T05:53:45.000Z</published>
-    <updated>2020-09-28T05:54:39.433Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;可能会遇到libwebp v0.6.0 超时问题:&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-csharp&quot;&gt;&lt;code class=&quot;language-csharp&quot;&gt;&lt;span class=&quot;token
         
       
     
