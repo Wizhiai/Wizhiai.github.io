@@ -4,16 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="iOS 搭建Node环境下的推送服务器, coding">
+    <meta name="keywords" content="iOS 架构, coding">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="先说注意点：
-1：开发环境下要配置developer的.p12证书，生产环境的时候在换掉。
-2：证书目录要用绝对的项目路径，建议使用__dirname;
-代码如下：
-`const apn = require‘𝑎𝑝𝑛′‘apn′;`
-*">
+    <meta name="description" content="mvp 
+uitableview  ,model定义代理，在controller里通过代理连接cell与UI
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>iOS 搭建Node环境下的推送服务器 | LJ的博客</title>
+    <title>iOS 架构 | LJ的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -334,13 +331,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        iOS 搭建Node环境下的推送服务器
+                        iOS 架构
                     </div>
                 </div>
             </div>
@@ -462,7 +459,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-28
+                    2020-11-19
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -476,7 +473,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    244
+                    17
                 </div>
                 
 
@@ -499,42 +496,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>先说注意点：</p>
-<p>1：开发环境下要配置developer的.p12证书，生产环境的时候在换掉。</p>
-<p>2：证书目录要用绝对的项目路径，建议使用__dirname;</p>
-<p>代码如下：</p>
-<p><strong>`const</strong> apn = require‘𝑎𝑝𝑛′‘apn′;`</p>
-<pre><code>**var** path=require(&#39;path&#39;);
-// pfx:path.join(__dirname,&#39;../keys/product.p12&#39;),//证书路径
-// weatcher.p12
-// production:true //是否是生产环境
-**const** options = {
-pfx:path.join(__dirname,&#39;../keys/weatcherAPNS.p12&#39;),//证书路径
-passphrase:&quot;123&quot;,//证书解压密码
-// production:true //是否是生产环境
-production:**false** //是否是生产环境
-};
-path.join(__dirname,&#39;../keys/getui.p12&#39;)
-**var** apnProvider = **new** apn.Provider(options);
-**const** note = **new** apn.Notification();
-note.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
-note.badge = 1;
-note.sound = &quot;ping.aiff&quot;;
-note.alert = &quot;\uD83D\uDCE7 \u2709 You have a new message&quot;;//待推送显示内容
-note.payload = {&#39;messageFrom&#39;: &#39;John Appleseed&#39;};
-note.topic = &quot;weatcherNotice&quot;;//app包名
-note.compiled = **null**;
-**var** apns = {
-sendToSingle : **function**(deviceToken,message){</code></pre><p> <code>note.alert = message.message ;</code></p>
-<p> <code>console.log( message.message);</code></p>
-<p> <code>console.log( note);</code></p>
-<p> <code>apnProvider.send(note, deviceToken).then( (result) =&gt; {</code></p>
-<p> <code>console.info(result);</code></p>
-<p> <code>console.info(JSON.stringify(result));</code></p>
-<pre><code>});
-}
-}
-module.exports = apns;</code></pre>
+                <p>mvp </p>
+<p>uitableview  ,model定义代理，在controller里通过代理连接cell与UI</p>
+
             </div>
             <hr />
 
@@ -692,9 +656,9 @@ module.exports = apns;</code></pre>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《iOS 搭建Node环境下的推送服务器》
+                    《iOS 架构》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/09/28/ios-da-jian-node-huan-jing-xia-de-tui-song-fu-wu-qi/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/11/19/ios-jia-gou/" property="cc:attributionName"
                rel="cc:attributionURL">
                 胡
             </a> 采用
@@ -1000,27 +964,28 @@ module.exports = apns;</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/28/sdwebimage-fen-xi/">
+                <a href="/2020/11/25/git-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="SDWebImage分析">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="git 命令">
                         
-                        <span class="card-title">SDWebImage分析</span>
+                        <span class="card-title">git 命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SDWebImage一个为UIImageView提供一个分类来支持远程服务器图片加载的库。
-功能简介：1、一个添加了web图片加载和缓存管理的UIImageView分类
-      2、一个异步图片下载器
-      3、一个异步的内存加磁
+                            假如我们现在在dev分支上，刚开发完项目，执行了下列命令：git  add .
+git  commit -m '提交的备注信息'
+git  push -u origin dev
+想将dev分支合并到master分支，操作如下：
+1、首先切换
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-28
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-11-25
                         </span>
                         <span class="publish-author">
                             
@@ -1037,26 +1002,24 @@ module.exports = apns;</code></pre>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/28/ios-shi-yong-cocoapods-an-zhuang-libwebp-0-6-0-yu-dao-error-installing-libwebp/">
+                <a href="/2020/11/18/kai-fang-de-gong-gong-zu-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="iOS使用cocoapods 安装libwebp 0.6.0遇到Error installing libwebp">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="开放的公共组件">
                         
-                        <span class="card-title">iOS使用cocoapods 安装libwebp 0.6.0遇到Error installing libwebp</span>
+                        <span class="card-title">开放的公共组件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            可能会遇到libwebp v0.6.0 超时问题:
-[!] Error installing libwebp
-[!] /usr/bin/git clone https://chromium.googlesource.com/webm/lib
+                            1：颜色拾取器
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-11-18
                             </span>
                         <span class="publish-author">
                             

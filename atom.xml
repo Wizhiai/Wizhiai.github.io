@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wizhiai.github.io/"/>
-  <updated>2020-11-16T07:41:20.502Z</updated>
+  <updated>2020-11-25T09:55:23.539Z</updated>
   <id>https://wizhiai.github.io/</id>
   
   <author>
@@ -17,11 +17,102 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LoadError - library not found for class Digest::SHA1 — digest/sha1</title>
+    <link href="https://wizhiai.github.io/2020/11/25/loaderror-library-not-found-for-class-digest-sha1-digest-sha1/"/>
+    <id>https://wizhiai.github.io/2020/11/25/loaderror-library-not-found-for-class-digest-sha1-digest-sha1/</id>
+    <published>2020-11-25T09:52:16.000Z</published>
+    <updated>2020-11-25T09:55:23.539Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;开启全局代理；&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-rb&quot;&gt;&lt;code class=&quot;language-rb&quot;&gt;brew install ruby
+或者更新ruby，如果提示已存在，也可以重新装，或者更新。&lt;span
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git 命令</title>
+    <link href="https://wizhiai.github.io/2020/11/25/git-ming-ling/"/>
+    <id>https://wizhiai.github.io/2020/11/25/git-ming-ling/</id>
+    <published>2020-11-25T06:22:10.000Z</published>
+    <updated>2020-11-25T06:22:18.857Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;假如我们现在在dev分支上，刚开发完项目，执行了下列命令：&quot;&gt;&lt;a href=&quot;#假如我们现在在dev分支上，刚开发完项目，执行了下列命令：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS 架构</title>
+    <link href="https://wizhiai.github.io/2020/11/19/ios-jia-gou/"/>
+    <id>https://wizhiai.github.io/2020/11/19/ios-jia-gou/</id>
+    <published>2020-11-19T02:34:52.000Z</published>
+    <updated>2020-11-25T06:22:15.442Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;mvp &lt;/p&gt;
+&lt;p&gt;uitableview 
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>开放的公共组件</title>
+    <link href="https://wizhiai.github.io/2020/11/18/kai-fang-de-gong-gong-zu-jian/"/>
+    <id>https://wizhiai.github.io/2020/11/18/kai-fang-de-gong-gong-zu-jian/</id>
+    <published>2020-11-18T05:47:17.000Z</published>
+    <updated>2020-11-18T05:54:14.594Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1：颜色拾取器&quot;&gt;&lt;a href=&quot;#1：颜色拾取器&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Flutter接入已有项目</title>
     <link href="https://wizhiai.github.io/2020/11/16/flutter-jie-ru-yi-you-xiang-mu/"/>
     <id>https://wizhiai.github.io/2020/11/16/flutter-jie-ru-yi-you-xiang-mu/</id>
     <published>2020-11-16T03:03:26.000Z</published>
-    <updated>2020-11-16T07:41:20.502Z</updated>
+    <updated>2020-11-16T08:52:04.418Z</updated>
     
     <summary type="html">
     
@@ -380,99 +471,6 @@
         
         
           &lt;p&gt;转：&lt;a href=&quot;http://chun.tips/blog/2014/11/05/bao-gen-wen-di-objective[nil]c-runtime(1)[nil]-self-and-super/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>基于一段文本语句的自动生成生成选择题/填空题，用于巩固自己新学的知识进行自我测验‘ </title>
-    <link href="https://wizhiai.github.io/2020/09/28/ji-yu-yi-duan-wen-ben-yu-ju-de-zi-dong-sheng-cheng-sheng-cheng-xuan-ze-ti-tian-kong-ti-yong-yu-gong-gu-zi-ji-xin-xue-de-zhi-shi-jin-xing-zi-wo-ce-yan/"/>
-    <id>https://wizhiai.github.io/2020/09/28/ji-yu-yi-duan-wen-ben-yu-ju-de-zi-dong-sheng-cheng-sheng-cheng-xuan-ze-ti-tian-kong-ti-yong-yu-gong-gu-zi-ji-xin-xue-de-zhi-shi-jin-xing-zi-wo-ce-yan/</id>
-    <published>2020-09-28T05:58:05.000Z</published>
-    <updated>2020-09-28T05:59:18.699Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;这个因为涉及到自己做的一个app的核心，具体实现不写公开博客了&lt;/p&gt;
-&lt;p&gt;参考：结巴分词&lt;a href=&quot;https://github.com/fxsjy/jieba&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>参考资料，文档</title>
-    <link href="https://wizhiai.github.io/2020/09/28/can-kao-zi-liao-wen-dang/"/>
-    <id>https://wizhiai.github.io/2020/09/28/can-kao-zi-liao-wen-dang/</id>
-    <published>2020-09-28T05:56:09.000Z</published>
-    <updated>2020-09-28T05:56:27.662Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;iOS-应用防-HTTPS-MiTM-基本方案&quot;&gt;&lt;a href=&quot;#iOS-应用防-HTTPS-MiTM-基本方案&quot; class=&quot;headerlink&quot; title=&quot;iOS 应用防 HTTPS MiTM 基本方案&quot;&gt;&lt;/a&gt;iOS 应用防 HTTPS
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>SDWebImage分析</title>
-    <link href="https://wizhiai.github.io/2020/09/28/sdwebimage-fen-xi/"/>
-    <id>https://wizhiai.github.io/2020/09/28/sdwebimage-fen-xi/</id>
-    <published>2020-09-28T05:55:33.000Z</published>
-    <updated>2020-09-28T05:57:33.095Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;SDWebImage&quot;&gt;&lt;a href=&quot;#SDWebImage&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>iOS 搭建Node环境下的推送服务器</title>
-    <link href="https://wizhiai.github.io/2020/09/28/ios-da-jian-node-huan-jing-xia-de-tui-song-fu-wu-qi/"/>
-    <id>https://wizhiai.github.io/2020/09/28/ios-da-jian-node-huan-jing-xia-de-tui-song-fu-wu-qi/</id>
-    <published>2020-09-28T05:54:45.000Z</published>
-    <updated>2020-09-28T05:55:04.773Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;先说注意点：&lt;/p&gt;
-&lt;p&gt;1：开发环境下要配置developer的.p12证书，生产环境的时候在换掉。&lt;/p&gt;
-&lt;p&gt;2：证书目录要用绝对的项目路径，建议使用__dirname;&lt;/p&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;`const&lt;/strong&gt;
         
       
     
