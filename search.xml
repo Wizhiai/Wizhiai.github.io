@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>查看appstore历史构建版本的包大小</title>
+      <link href="/2020/11/27/cha-kan-appstore-li-shi-gou-jian-ban-ben-de-bao-da-xiao/"/>
+      <url>/2020/11/27/cha-kan-appstore-li-shi-gou-jian-ban-ben-de-bao-da-xiao/</url>
+      
+        <content type="html"><![CDATA[<p>打开appstore</p><p><a href="https://appstoreconnect.apple.com/apps" target="_blank" rel="noopener">https://appstoreconnect.apple.com/apps</a></p><p>打开你的app，并在构建版本一栏找到你要查看的版本，点击icon右边的版本号数字（蓝色显示可点击。例如1）</p><p><img src="//wizhiai.github.io/2020/11/27/cha-kan-appstore-li-shi-gou-jian-ban-ben-de-bao-da-xiao/image-20201127103857401.png" alt="image-20201127103857401"></p><p>此时进入如下页面（活动页的版本详细信息）</p><p><img src="//wizhiai.github.io/2020/11/27/cha-kan-appstore-li-shi-gou-jian-ban-ben-de-bao-da-xiao/image-20201127104101740.png" alt="image-20201127104101740"></p><p>点击箭头所示的【压缩文件大小】选项里的【AppStore文件大小】选项，即可看到在所有设备的展示大小和安装大小，，如下图</p><p><img src="//wizhiai.github.io/2020/11/27/cha-kan-appstore-li-shi-gou-jian-ban-ben-de-bao-da-xiao/image-20201127104217586.png" alt="image-20201127104217586"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LoadError - library not found for class Digest::SHA1 — digest/sha1</title>
       <link href="/2020/11/25/loaderror-library-not-found-for-class-digest-sha1-digest-sha1/"/>
       <url>/2020/11/25/loaderror-library-not-found-for-class-digest-sha1-digest-sha1/</url>
