@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>koa添加中间件无法解析post的参数</title>
+      <link href="/2020/12/01/koa-tian-jia-zhong-jian-jian-wu-fa-jie-xi-post-de-can-shu/"/>
+      <url>/2020/12/01/koa-tian-jia-zhong-jian-jian-wu-fa-jie-xi-post-de-can-shu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="问题现象："><a href="#问题现象：" class="headerlink" title="问题现象："></a>问题现象：</h2><p>今天新搭建了一个koa的脚手架，发现不能正常解析移动端传过来的post，或者post的参数传nil可以解析，传参数就不可以，客户端那边的ContentType是text/plain，错误内容：</p><p>JSON text did not start with array or object and option to allow fragments not set.” UserInfo={NSDebugDescription=JSON text did not start with array or object and option to allow fragments not set., NSUnderlyingError=0x28318b060 {Error Domain=com.alamofire.error.serialization.response Code=-1011 “Request failed: unsupported media type (415)” UserInfo={NSLocalizedDescription=Request failed: unsupported media type (415), NSErrorFailingURLKey=<a href="http://apppreview.frpgz1.idcfengye.com/api/getAppPreviewQAList" target="_blank" rel="noopener">http://apppreview.frpgz1.idcfengye.com/api/getAppPreviewQAList</a>, com.alamofire.serialization.response.error.data={length = 30, bytes = 0x73706563 69666965 6420656e 636f6469 … 7570706f 72746564 }</p><p>因为koa无法解析post，所以需要中间件，脚手架默认使用的koa-body</p><p>route这边使用的是require(‘koa-body’);</p><p>设置如下：</p><pre><code>app.use(koaBody({  multipart:true, // 支持文件上传  encoding:&#39;gzip&#39;,  formidable:{    uploadDir:path.join(__dirname,appConfig.upload.dir), // 设置文件上传目录    keepExtensions: true,    // 保持文件的后缀    maxFieldsSize:appConfig.upload.size, // 文件上传大小限制    onFileBegin:(name,file) =&gt; { // 文件上传前的操作    },  }}));</code></pre><p>这样设置无法正确解析post请求，后来又加了require(‘koa-bodyparser’);，</p><pre><code>app.use(bodyParser1({    // enableTypes: [&#39;text/plain&#39;, &#39;text&#39;],    // onerror: function (err, ctx) {    //     ctx.throw(&#39;body parse error&#39;, 422);    // }}));</code></pre><p>但是发现还是不行，一想，难道是koa-body不行，两个都用后面的无效？</p><p>遂把koa-body去掉。果然就可以了。</p><p>解决方法：</p><p>只使用require(‘koa-bodyparser’);，即可。</p><p>分析：</p><p>但是目前大多数都是用koa-body代替了bodyparser，正常也是body可以解析post，这次不知道是为什么除了问题，有时间再研究下。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>QMUI换肤</title>
+      <link href="/2020/11/27/qmui-huan-fu/"/>
+      <url>/2020/11/27/qmui-huan-fu/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>查看appstore历史构建版本的包大小</title>
       <link href="/2020/11/27/cha-kan-appstore-li-shi-gou-jian-ban-ben-de-bao-da-xiao/"/>
       <url>/2020/11/27/cha-kan-appstore-li-shi-gou-jian-ban-ben-de-bao-da-xiao/</url>

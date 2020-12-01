@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wizhiai.github.io/"/>
-  <updated>2020-11-27T02:42:19.751Z</updated>
+  <updated>2020-12-01T12:23:26.522Z</updated>
   <id>https://wizhiai.github.io/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>koa添加中间件无法解析post的参数</title>
+    <link href="https://wizhiai.github.io/2020/12/01/koa-tian-jia-zhong-jian-jian-wu-fa-jie-xi-post-de-can-shu/"/>
+    <id>https://wizhiai.github.io/2020/12/01/koa-tian-jia-zhong-jian-jian-wu-fa-jie-xi-post-de-can-shu/</id>
+    <published>2020-12-01T12:07:22.000Z</published>
+    <updated>2020-12-01T12:23:26.522Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;问题现象：&quot;&gt;&lt;a href=&quot;#问题现象：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>QMUI换肤</title>
+    <link href="https://wizhiai.github.io/2020/11/27/qmui-huan-fu/"/>
+    <id>https://wizhiai.github.io/2020/11/27/qmui-huan-fu/</id>
+    <published>2020-11-27T07:37:26.000Z</published>
+    <updated>2020-11-27T07:39:34.610Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>查看appstore历史构建版本的包大小</title>
@@ -420,58 +456,6 @@
         
           &lt;p&gt;CAShaperLayer和UIBezierPath都已经设置为kCGLineJoinRound&lt;/p&gt;
 &lt;p&gt;圆环的填充要设置_mainLine.lineCap =
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>mach port</title>
-    <link href="https://wizhiai.github.io/2020/09/28/mach-port/"/>
-    <id>https://wizhiai.github.io/2020/09/28/mach-port/</id>
-    <published>2020-09-28T06:00:44.000Z</published>
-    <updated>2020-09-28T06:00:55.108Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Runloop 保证不退出&lt;/p&gt;
-&lt;p&gt;mode&lt;/p&gt;
-&lt;p&gt;唤醒&lt;/p&gt;
-&lt;p&gt;mach——send_msg 唤醒mach——rcv——msg&lt;/p&gt;
-&lt;p&gt;Runloopgetmain&lt;/p&gt;
-&lt;p&gt;Sdtable
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>centos 更换mysql编码，以便支持emoji表情</title>
-    <link href="https://wizhiai.github.io/2020/09/28/centos-geng-huan-mysql-bian-ma-yi-bian-zhi-chi-emoji-biao-qing/"/>
-    <id>https://wizhiai.github.io/2020/09/28/centos-geng-huan-mysql-bian-ma-yi-bian-zhi-chi-emoji-biao-qing/</id>
-    <published>2020-09-28T06:00:11.000Z</published>
-    <updated>2020-09-28T06:00:25.459Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ol&gt;
-&lt;li&gt;更改 &lt;code&gt;/etc/mysql/my.cnf&lt;/code&gt;, 添加如下内容:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class=&quot;line-numbers language-csharp&quot;&gt;&lt;code
         
       
     
