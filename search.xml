@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>iphone出现无法使用共享我的位置问题解决</title>
+      <link href="/2021/01/28/iphone-chu-xian-wu-fa-shi-yong-gong-xiang-wo-de-wei-zhi-wen-ti-jie-jue/"/>
+      <url>/2021/01/28/iphone-chu-xian-wu-fa-shi-yong-gong-xiang-wo-de-wei-zhi-wen-ti-jie-jue/</url>
+      
+        <content type="html"><![CDATA[<p><img src="//wizhiai.github.io/2021/01/28/iphone-chu-xian-wu-fa-shi-yong-gong-xiang-wo-de-wei-zhi-wen-ti-jie-jue/5323b2315c6034a889285adedc134954082376aa.jpg" alt="img"></p><p>解决方法：</p><p>第一步1还原网络；</p><p>第二步：更换appid账号登录；</p><p>第三步：更换账号后一般能打开，进去打开关闭打开查找功能，多试两遍，再去查找app里试试；</p><p>第四步：退出更换的账号，重新登自己的appid账号，就可以了。</p><p>我出现这个的原因是，在老手机上还等着appid的查找，新买了手机直接复制老手机过来的，所以可能出现了冲突，把信息重置下就好了。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>centos 8设置中文环境</title>
       <link href="/2020/12/26/centos-8-she-zhi-zhong-wen-huan-jing/"/>
       <url>/2020/12/26/centos-8-she-zhi-zhong-wen-huan-jing/</url>
