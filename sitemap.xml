@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wizhiai.github.io/2020/12/26/centos-8-she-zhi-zhong-wen-huan-jing/</loc>
+    
+    <lastmod>2020-12-26T08:37:17.812Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wizhiai.github.io/2020/09/28/can-kao-zi-liao-wen-dang/</loc>
+    
+    <lastmod>2020-12-08T11:45:53.602Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wizhiai.github.io/2020/12/07/mac-an-zhuang-nas-mei-ti-cun-chu-qi/</loc>
+    
+    <lastmod>2020-12-08T09:43:27.861Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wizhiai.github.io/2020/11/16/flutter-jie-ru-yi-you-xiang-mu/</loc>
+    
+    <lastmod>2020-12-02T08:56:24.768Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wizhiai.github.io/2020/12/01/da-jian-nei-wang-chuan-tou-zhi-frp/</loc>
     
     <lastmod>2020-12-01T12:26:41.304Z</lastmod>
@@ -54,13 +82,6 @@
     <loc>https://wizhiai.github.io/2020/11/18/kai-fang-de-gong-gong-zu-jian/</loc>
     
     <lastmod>2020-11-18T05:54:14.594Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wizhiai.github.io/2020/11/16/flutter-jie-ru-yi-you-xiang-mu/</loc>
-    
-    <lastmod>2020-11-16T08:52:04.418Z</lastmod>
     
   </url>
   
@@ -184,13 +205,6 @@
   </url>
   
   <url>
-    <loc>https://wizhiai.github.io/2020/09/28/can-kao-zi-liao-wen-dang/</loc>
-    
-    <lastmod>2020-09-28T05:56:27.662Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://wizhiai.github.io/2020/09/28/ios-da-jian-node-huan-jing-xia-de-tui-song-fu-wu-qi/</loc>
     
     <lastmod>2020-09-28T05:55:04.773Z</lastmod>
@@ -296,13 +310,6 @@
   </url>
   
   <url>
-    <loc>https://wizhiai.github.io/contact/index.html</loc>
-    
-    <lastmod>2020-09-25T08:35:17.586Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://wizhiai.github.io/archives/index.html</loc>
     
     <lastmod>2020-09-25T08:35:17.586Z</lastmod>
@@ -310,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://wizhiai.github.io/categories/index.html</loc>
+    <loc>https://wizhiai.github.io/contact/index.html</loc>
     
     <lastmod>2020-09-25T08:35:17.586Z</lastmod>
     
@@ -318,6 +325,13 @@
   
   <url>
     <loc>https://wizhiai.github.io/about/index.html</loc>
+    
+    <lastmod>2020-09-25T08:35:17.586Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wizhiai.github.io/categories/index.html</loc>
     
     <lastmod>2020-09-25T08:35:17.586Z</lastmod>
     

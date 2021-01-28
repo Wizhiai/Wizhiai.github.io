@@ -4,15 +4,18 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="git 命令, coding">
+    <meta name="keywords" content="centos 8设置中文环境, coding">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="假如我们现在在dev分支上，刚开发完项目，执行了下列命令：git  add .
-git  commit -m &#39;提交的备注信息&#39;
-git  push -u origin dev
-想将dev分支合并到master分支，操作如下：
-1、首先切换">
+    <meta name="description" content="应对python3docker安装最新的centos8会乱码
+参考连接
+首先查看当前字符集
+locale
+看看有没有zh_CN.utf8
+locale -a |grep CN
+没有就安装
+yum install -y langpacks-z">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +23,7 @@ git  push -u origin dev
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>git 命令 | LJ的博客</title>
+    <title>centos 8设置中文环境 | LJ的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -333,13 +336,13 @@ git  push -u origin dev
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        git 命令
+                        centos 8设置中文环境
                     </div>
                 </div>
             </div>
@@ -461,7 +464,7 @@ git  push -u origin dev
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-25
+                    2020-12-26
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -475,7 +478,7 @@ git  push -u origin dev
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    311
+                    70
                 </div>
                 
 
@@ -498,50 +501,18 @@ git  push -u origin dev
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="假如我们现在在dev分支上，刚开发完项目，执行了下列命令："><a href="#假如我们现在在dev分支上，刚开发完项目，执行了下列命令：" class="headerlink" title="假如我们现在在dev分支上，刚开发完项目，执行了下列命令："></a>假如我们现在在dev分支上，刚开发完项目，执行了下列命令：</h2><pre class="line-numbers language-csharp"><code class="language-csharp">git  <span class="token keyword">add</span> <span class="token punctuation">.</span>
-git  commit <span class="token operator">-</span>m <span class="token string">'提交的备注信息'</span>
-git  push <span class="token operator">-</span>u origin dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="想将dev分支合并到master分支，操作如下："><a href="#想将dev分支合并到master分支，操作如下：" class="headerlink" title="想将dev分支合并到master分支，操作如下："></a>想将dev分支合并到master分支，操作如下：</h2><ul>
-<li>1、首先切换到master分支上</li>
-</ul>
-<pre class="line-numbers language-undefined"><code class="language-undefined">git  checkout master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>2、如果是多人开发的话 需要把远程master上的代码pull下来</li>
-</ul>
-<pre class="line-numbers language-cpp"><code class="language-cpp">git pull origin master
-<span class="token comment" spellcheck="true">//如果是自己一个开发就没有必要了，为了保险期间还是pull</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>3、然后我们把dev分支的代码合并到master上</li>
-</ul>
-<pre class="line-numbers language-undefined"><code class="language-undefined">git  merge dev<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>4、然后查看状态及执行提交命令</li>
-</ul>
-<pre class="line-numbers language-csharp"><code class="language-csharp">git status
-
-On branch master
-Your branch <span class="token keyword">is</span> ahead of <span class="token string">'origin/master'</span> by <span class="token number">12</span> commits<span class="token punctuation">.</span>
-  <span class="token punctuation">(</span>use <span class="token string">"git push"</span> to publish your local commits<span class="token punctuation">)</span>
-nothing to commit<span class="token punctuation">,</span> working tree clean
-
-<span class="token comment" spellcheck="true">//上面的意思就是你有12个commit，需要push到远程master上 </span>
-<span class="token operator">></span> 最后执行下面提交命令
-git push origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>5其他命令</li>
-</ul>
-<pre class="line-numbers language-cpp"><code class="language-cpp">更新远程分支列表
-git remote update origin <span class="token operator">--</span>prune
-
-查看所有分支
-git branch <span class="token operator">-</span>a
-
-删除远程分支Chapater6
-git push origin <span class="token operator">--</span><span class="token keyword">delete</span> Chapater6
-
-删除本地分支 Chapater6
-git branch <span class="token operator">-</span>d  Chapater6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>作者：江南之城<br>链接：<a href="https://www.jianshu.com/p/26d050497abb" target="_blank" rel="noopener">https://www.jianshu.com/p/26d050497abb</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+                <p>应对python3docker安装最新的centos8会乱码</p>
+<p>参考<a href="https://blog.csdn.net/whq12789/article/details/104043462" target="_blank" rel="noopener">连接</a></p>
+<p>首先查看当前字符集</p>
+<p>locale</p>
+<p>看看有没有zh_CN.utf8</p>
+<p>locale -a |grep CN</p>
+<p>没有就安装</p>
+<p>yum install -y langpacks-zh_CN</p>
+<p>安装后再次确认配置</p>
+<p>vi /etc/locale.conf</p>
+<p>LANG=“zh_CN.UTF-8”</p>
+<p>修改后重启即可</p>
 
             </div>
             <hr />
@@ -700,9 +671,9 @@ git branch <span class="token operator">-</span>d  Chapater6<span aria-hidden="t
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《git 命令》
+                    《centos 8设置中文环境》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/11/25/git-ming-ling/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/12/26/centos-8-she-zhi-zhong-wen-huan-jing/" property="cc:attributionName"
                rel="cc:attributionURL">
                 胡
             </a> 采用
@@ -1004,38 +975,43 @@ git branch <span class="token operator">-</span>d  Chapater6<span aria-hidden="t
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/11/25/loaderror-library-not-found-for-class-digest-sha1-digest-sha1/">
+                <a href="/2020/12/26/centos-8-she-zhi-zhong-wen-huan-jing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="LoadError - library not found for class Digest::SHA1 — digest/sha1">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="centos 8设置中文环境">
                         
-                        <span class="card-title">LoadError - library not found for class Digest::SHA1 — digest/sha1</span>
+                        <span class="card-title">centos 8设置中文环境</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            开启全局代理；
-brew install ruby
-或者更新ruby，如果提示已存在，也可以重新装，或者更新。
-below command will overwrite the previous version
-brew link --ov
+                            应对python3docker安装最新的centos8会乱码
+参考连接
+首先查看当前字符集
+locale
+看看有没有zh_CN.utf8
+locale -a |grep CN
+没有就安装
+yum install -y langpacks-z
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-11-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-26
+                            </span>
                         <span class="publish-author">
                             
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1046,26 +1022,27 @@ brew link --ov
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/19/ios-jia-gou/">
+                <a href="/2020/12/07/mac-an-zhuang-nas-mei-ti-cun-chu-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="iOS 架构">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="mac 安装nas媒体存储器">
                         
-                        <span class="card-title">iOS 架构</span>
+                        <span class="card-title">mac 安装nas媒体存储器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mvp 
-uitableview  ,model定义代理，在controller里通过代理连接cell与UI
+                            1:黑群晖系统1先安装虚拟机virturalbox
+2下载群辉系统需要的文件
+3新建虚拟系统，文件系统选择群辉引导文件
 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-11-19
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-07
                             </span>
                         <span class="publish-author">
                             

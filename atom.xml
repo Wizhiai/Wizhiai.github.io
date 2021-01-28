@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wizhiai.github.io/"/>
-  <updated>2020-12-01T12:26:41.304Z</updated>
+  <updated>2020-12-26T08:37:17.812Z</updated>
   <id>https://wizhiai.github.io/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>centos 8设置中文环境</title>
+    <link href="https://wizhiai.github.io/2020/12/26/centos-8-she-zhi-zhong-wen-huan-jing/"/>
+    <id>https://wizhiai.github.io/2020/12/26/centos-8-she-zhi-zhong-wen-huan-jing/</id>
+    <published>2020-12-26T08:36:44.000Z</published>
+    <updated>2020-12-26T08:37:17.812Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;应对python3docker安装最新的centos8会乱码&lt;/p&gt;
+&lt;p&gt;参考&lt;a href=&quot;https://blog.csdn.net/whq12789/article/details/104043462&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mac 安装nas媒体存储器</title>
+    <link href="https://wizhiai.github.io/2020/12/07/mac-an-zhuang-nas-mei-ti-cun-chu-qi/"/>
+    <id>https://wizhiai.github.io/2020/12/07/mac-an-zhuang-nas-mei-ti-cun-chu-qi/</id>
+    <published>2020-12-07T07:58:40.000Z</published>
+    <updated>2020-12-08T09:43:27.861Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-黑群晖系统&quot;&gt;&lt;a href=&quot;#1-黑群晖系统&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>搭建内网穿透之frp</title>
@@ -193,7 +238,7 @@
     <link href="https://wizhiai.github.io/2020/11/16/flutter-jie-ru-yi-you-xiang-mu/"/>
     <id>https://wizhiai.github.io/2020/11/16/flutter-jie-ru-yi-you-xiang-mu/</id>
     <published>2020-11-16T03:03:26.000Z</published>
-    <updated>2020-11-16T08:52:04.418Z</updated>
+    <updated>2020-12-02T08:56:24.768Z</updated>
     
     <summary type="html">
     
@@ -409,52 +454,6 @@
         
         
           &lt;h1 id=&quot;Flutter的Json解析&quot;&gt;&lt;a href=&quot;#Flutter的Json解析&quot; class=&quot;headerlink&quot; title=&quot;Flutter的Json解析&quot;&gt;&lt;/a&gt;Flutter的Json解析&lt;/h1&gt;&lt;h3
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>flutter appbar返回键</title>
-    <link href="https://wizhiai.github.io/2020/09/28/flutter-appbar-fan-hui-jian/"/>
-    <id>https://wizhiai.github.io/2020/09/28/flutter-appbar-fan-hui-jian/</id>
-    <published>2020-09-28T06:39:02.000Z</published>
-    <updated>2020-09-28T06:39:52.924Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;appBar: AppBar(&lt;/p&gt;
-&lt;p&gt;  backgroundColor: Color.fromRGBO(248,250,255,1),  //设置appBar背景色&lt;br&gt;  elevation: 0, // 立视度为0&lt;br&gt;  title:
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设置view随键盘升高，点击切换密码模式时，底部暴露出黑色背景</title>
-    <link href="https://wizhiai.github.io/2020/09/28/she-zhi-view-sui-jian-pan-sheng-gao-dian-ji-qie-huan-mi-ma-mo-shi-shi-di-bu-bao-lu-chu-hei-se-bei-jing/"/>
-    <id>https://wizhiai.github.io/2020/09/28/she-zhi-view-sui-jian-pan-sheng-gao-dian-ji-qie-huan-mi-ma-mo-shi-shi-di-bu-bao-lu-chu-hei-se-bei-jing/</id>
-    <published>2020-09-28T06:02:03.000Z</published>
-    <updated>2020-09-28T06:02:25.757Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;这种一般设置下当前视图view的背景颜色为与当前颜色匹配即可。&lt;/p&gt;
-&lt;p&gt;比如，navagationcontroller下的一个controller的背景颜色为黑色，设置_navigationController.view.backgroundColor =
         
       
     
