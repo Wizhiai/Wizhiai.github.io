@@ -8,12 +8,12 @@ subtitle: ''
 description: '胡礼节的博客'
 keywords:
 author: 胡礼节
-language: zh-Hans
+language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: http://Wizhiai.github.io
 root: /
 permalink: /p/:abbrlink/
 permalink_defaults:
