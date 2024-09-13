@@ -419,27 +419,7 @@ open_graph:
 footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
-  content: '
-    <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC82MDEyNi8zNjU5Mw==">
-<script type="text/javascript">
-var refer = "<?=get_permalink($id);?>".replace("http://","");
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-  '
+  content: '<div id="lv-container" data-id="city" data-uid="MTAyMC82MDEyNi8zNjU5Mw=="><script type="text/javascript">var refer = "<?=get_permalink($id);?>".replace("http://","");(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; }j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script><noscript>为正常使用来必力评论功能请激活JavaScript</noscript></div>'
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
